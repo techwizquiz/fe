@@ -14,12 +14,16 @@ export default class Home extends Component {
               </section>
 
               <section className={styles.logInInfo}>
-                <label htmlFor='username'>username:</label>
-                <input id='userName' type='userName' name='email' value={ } onChange={ } />
+                <label htmlFor="username">username:</label>
+                <input id="userName" type="userName" name="email"
+                // value={ } onChange={ } 
+                />
 
 
-                <label htmlFor='password'>password:</label>
-                <input id='password' type='password' name='password' value={ } onChange={ } />
+                <label htmlFor="password">password:</label>
+                <input id="password" type="password" name="password"
+                // value={ } onChange={ } 
+                />
               </section>
 
               <section className={styles.logInButton}>
