@@ -36,12 +36,12 @@ const Home = () => {
   return (
     <div className={styles.homePage}>
 
-      <form>
-        <div className={styles.leftHalf}>
+      <div className={styles.leftHalf}>
+        <form>
           <div className={styles.logIn}>
             <section className={styles.logInHeader}>
               <p>Log In</p>
-              <Link to="/signup">Sign Up</Link>
+             
 
             </section>
 
@@ -56,6 +56,7 @@ const Home = () => {
               <input id="password" type="password" name="password"
               // value={password} onChange={handleChange} 
               />
+              <Link to="/signup">Sign Up</Link>
             </section>
 
             <section className={styles.logInButton}>
@@ -63,13 +64,15 @@ const Home = () => {
             </section>
 
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
 
 
       <div className={styles.rightHalf}>
         <div className={styles.quizButtons}>
-          <button>Start Quiz</button>
+          <Link to="/quiz/">
+            <button>Start Quiz</button>
+          </Link>
           <Link to="/submit">
             <button>Submit a Question</button>
           </Link>

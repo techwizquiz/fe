@@ -3,6 +3,7 @@ import Home from '../../Pages/Home';
 import Header from '../../Pages/Header';
 import AboutUs from '../../Pages/AboutUs';
 import Submit from '../../Pages/Submit';
+import QuizPage from '../../Pages/QuizPage';
 import SignUp from '../../Pages/SignUp';
 
 import {
@@ -40,6 +41,12 @@ class App extends Component {
           <Route path="/submit/" exact={true}
             render={routerProps => (
               <Submit {...routerProps} />
+            )}
+          />
+
+          <Route path="/quiz/" exact={true}
+            render={routerProps => (
+              <QuizPage {...routerProps} />
             )}
           />
 

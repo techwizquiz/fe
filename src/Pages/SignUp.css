@@ -3,6 +3,7 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  background-color: rgb(255, 244, 200);
 }
 
 .SignUp {
@@ -12,6 +13,7 @@
   width: 620px;
   height: 310px;
   align-items: center;
+  background-color: rgb(137, 170, 231);
 }
 
 .SignUpHeader {
@@ -29,6 +31,10 @@
   font-size: x-large;
 }
 
+.SignUpInfo input {
+  margin-bottom: 15px;
+}
+
 .SignUpButton {
   display: flex;
   align-items: flex-end;
@@ -44,4 +50,6 @@
   height: 55px;
   justify-content: center;
   align-items: center;
+  background-color: cornflowerblue;
+  cursor: pointer;
 }

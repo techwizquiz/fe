@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Header.css';
 
 export default class Header extends Component {
@@ -10,8 +11,10 @@ export default class Header extends Component {
         </div>
 
         <div className={styles.headerNavLinks}>
-          <p>Home</p>
-          <p>Log In</p>
+          <Link to="/">
+            <p>Home</p>
+          </Link>
+          <p>Log Out</p>
         </div>
 
       </div>

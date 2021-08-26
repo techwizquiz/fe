@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
+    background-color: rgb(255, 244, 200);
 }
 
 .left {
@@ -14,13 +15,66 @@
 }
 
 .choiceButton {
+    cursor: pointer;
     height: 120px;
     width: 500px;
+    background-color: rgb(137, 170, 231);
+    box-shadow: 0 10px rgb(7, 7, 112);
+
+}
+
+.choiceButton:hover {
+    cursor: pointer;
+    height: 120px;
+    width: 500px;
+    background-color: rgb(56, 123, 248);
+    box-shadow: 0 10px rgb(7, 7, 112);
+
+}
+.choiceButton:active {
+    cursor: pointer;
+    height: 120px;
+    width: 500px;
+    background-color: rgb(137, 170, 231);
+    transform: translateY(6px);
+    box-shadow: 0 6px darkblue;
 }
 
 .middle {
     height: 100%;
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.submitButton {
+    cursor: pointer;
+    border-radius: 50%;
+    outline: cornflowerblue;
+    height: 200px;
+    width: 200px;
+    background-color: cornflowerblue;
+    box-shadow: 0 9px rgb(26, 34, 75);
+    
+}
+
+.submitButton:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    outline: cornflowerblue;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(56, 123, 248);
+    box-shadow: 0 9px rgb(26, 34, 75);
+    
+}
+
+.submitButton:active {
+    background-color:  cornflowerblue;
+    box-shadow: 0 5px black;
+    transform: translateY(6px);
 }
 
 .right {
@@ -28,9 +82,15 @@
     flex-grow: 2;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .question {
     border: 1px solid black;
     height: 500px;
+    width:400px;
+    background-color: rgb(137, 170, 231);
+    
 }
