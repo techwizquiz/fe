@@ -70,7 +70,9 @@ const Home = () => {
       <div className={styles.rightHalf}>
         <div className={styles.quizButtons}>
           <button>Start Quiz</button>
-          <button>Submit a Question</button>
+          <Link to="/submit">
+            <button>Submit a Question</button>
+          </Link>
           <button>View Questions</button>
         </div>
 
