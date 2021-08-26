@@ -5,45 +5,66 @@ import styles from './Submit.css';
 export default class Submit extends Component {
   render() {
     return (
-      <div>
+      <div className={styles.submitPage}>
         <form>
+          <div className={styles.submit}>
 
-          <label>Question</label>
-          <input></input>
+            <div className={styles.fix}>
+              <label>Question:</label>
+              <input></input>
+            </div>
 
-          <label>Possible Answer</label>
-          <input></input>
-          <input type="radio" id="correct-A" name="correct-A" value="correct-A"></input>
-          <label>Correct Answer?</label>
+            <div className={styles.fix}>
+              <label>Possible Answer:</label>
+              <input></input>
+            </div>
 
-          <label>Possible Answer</label>
-          <input></input>
-          <input type="radio" id="correct-B" name="correct-B" value="correct-B"></input>
-          <label>Correct Answer?</label>
-
-
-          <label>Possible Answer</label>
-          <input></input>
-          <input type="radio" id="correct-C" name="correct-C" value="correct-C"></input>
-          <label>Correct Answer?</label>
+            <div className={styles.fix}>
+              <label>Correct Answer?</label>
+              <input type="radio" id="correct-A" name="correct" value="correct-A"></input>
+            </div>
 
 
-          <label>Possible Answer</label>
-          <input></input>
-          <input type="radio" id="correct-D" name="correct-D" value="correct-D"></input>
-          <label>Correct Answer?</label>
+            <div className={styles.fix}>
+              <label>Possible Answer:</label>
+              <input></input>
+            </div>
+
+            <div className={styles.fix}>
+              <label>Correct Answer?</label>
+              <input type="radio" id="correct-B" name="correct" value="correct-B"></input>
+            </div>
 
 
+            <div className={styles.fix}>
+              <label>Possible Answer:</label>
+              <input></input>
+            </div>
+
+            <div className={styles.fix}>
+              <label>Correct Answer?</label>
+              <input type="radio" id="correct-C" name="correct" value="correct-C"></input>
+            </div>
 
 
+            <div className={styles.fix}>
+              <label>Possible Answer:</label>
+              <input></input>
+            </div>
 
+            <div className={styles.fix}>
+              <label>Correct Answer?</label>
+              <input type="radio" id="correct-D" name="correct" value="correct-D"></input>
+            </div>
 
+            <div className={styles.fix}>
+              <label>Programming Language:</label>
+              <input></input>
+            </div>
 
+            <button>Submit</button>
 
-
-
-
-
+          </div>
         </form>
       </div >
     );

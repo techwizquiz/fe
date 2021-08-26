@@ -4,12 +4,14 @@ import Header from '../../Pages/Header';
 import AboutUs from '../../Pages/AboutUs';
 import Submit from '../../Pages/Submit';
 import QuizPage from '../../Pages/QuizPage';
+import SignUp from '../../Pages/SignUp';
 
 import {
   Route,
   Switch,
   Redirect
 } from 'react-router-dom';
+
 
 class App extends Component {
   render() {
@@ -28,6 +30,13 @@ class App extends Component {
               <Home {...routerProps} />
             )}
           />
+
+          <Route path="/signup/" exact={true}
+            render={routerProps => (
+              <SignUp {...routerProps} />
+            )}
+          />
+
 
           <Route path="/submit/" exact={true}
             render={routerProps => (
