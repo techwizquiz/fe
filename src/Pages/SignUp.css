@@ -1,0 +1,47 @@
+.SignUpPage {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.SignUp {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  width: 620px;
+  height: 310px;
+  align-items: center;
+}
+
+.SignUpHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: x-large;
+}
+
+.SignUpInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  font-size: x-large;
+}
+
+.SignUpButton {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.submitButton {
+  display: flex;
+  border: 1px black solid;
+  border-radius: 5%;
+  width: 160px;
+  height: 55px;
+  justify-content: center;
+  align-items: center;
+}
