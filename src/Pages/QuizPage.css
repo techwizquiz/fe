@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
+    background-color: rgb(255, 244, 200);
 }
 
 .left {
@@ -14,13 +15,31 @@
 }
 
 .choiceButton {
+    cursor: pointer;
     height: 120px;
     width: 500px;
+    background-color: rgb(137, 170, 231);
+    box-shadow: 8px 8px 1px 1px rgba(0, 0, 255, .2);
+
 }
 
 .middle {
     height: 100%;
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.submitButton {
+    cursor: pointer;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-color: cornflowerblue;
+    box-shadow: 8px 8px 1px 1px rgba(0, 0, 255, .2);
+    
 }
 
 .right {
@@ -28,9 +47,11 @@
     flex-grow: 2;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .question {
     border: 1px solid black;
     height: 500px;
+    background-color: rgb(137, 170, 231);
 }
