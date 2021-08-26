@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useState, } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Home.css';
 
 const Home = () => {
@@ -40,6 +41,8 @@ const Home = () => {
           <div className={styles.logIn}>
             <section className={styles.logInHeader}>
               <p>Log In</p>
+              <Link to="/signup">Sign Up</Link>
+
             </section>
 
             <section className={styles.logInInfo}>
