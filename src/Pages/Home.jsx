@@ -22,8 +22,8 @@ const Home = () => {
 
 
   const handleChange = ({ target }) => {
-    if (target.name === 'email') setEmail(target.value);
-    if (target.name === 'password') setPassword(target.value);
+    if(target.name === 'email') setEmail(target.value);
+    if(target.name === 'password') setPassword(target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -32,7 +32,7 @@ const Home = () => {
   };
 
 
-  return <Home>
+  return (
     <div className={styles.homePage}>
 
       <form onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ const Home = () => {
       </div>
 
     </div >
-  </Home>;
+  );
 
 };
 
