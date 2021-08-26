@@ -1,21 +1,25 @@
 .homePage {
     display: flex;
     height: 100vh;
+    width: 100%;
+    background-color: rgb(255, 244, 200);
 }
 
 .leftHalf {
     display: flex;
-    height: auto;
+    height: 100%;
     width: 50%;
     justify-content: center;
     align-items: center;
+   
 }
 
 .rightHalf {
     display: flex;
-    height: auto;
+    height: 100%;
     width: 50%;
     justify-content: space-evenly;
+    
     
 }
 
@@ -26,6 +30,9 @@
     width: 620px;
     height: 310px;
     align-items: center;
+    background-color: rgb(137, 170, 231);
+
+    
 }
 
 .logInHeader {
@@ -33,6 +40,19 @@
     align-items: flex-end;
     justify-content: center;
     font-size: x-large;
+    background-color: cornflowerblue;
+    width: inherit
+    
+}
+
+.logInHeader p {
+    display: flex;
+    align-self: center;
+}
+
+.logInInfo :link {
+    display: flex;
+    align-self: center;
     
 }
 
@@ -42,6 +62,7 @@
     justify-content: center;
     width: 350px;
     font-size: x-large;
+    
 }
 
 .logInButton {
@@ -59,6 +80,7 @@
     height: 55px;
     justify-content: center;
     align-items: center;
+    background-color: cornflowerblue;
 }
 
 .quizButtons{
@@ -71,4 +93,6 @@
 .quizButtons button {
     height: 125px;
     width: 350px;
+    background-color: rgb(137, 170, 231);
+
 }
