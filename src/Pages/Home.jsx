@@ -1,50 +1,77 @@
-import React, { Component } from 'react';
+/* eslint-disable max-len */
+import React, { useState } from 'react';
 import styles from './Home.css';
 
-export default class Home extends Component {
-  render() {
-    return (
-      <div className={styles.homePage}>
-
-        <form>
-          <div className={styles.leftHalf}>
-            <div className={styles.logIn}>
-              <section className={styles.logInHeader}>
-                <p>Log In/Sign Up</p>
-              </section>
-
-              <section className={styles.logInInfo}>
-                <label htmlFor="username">username:</label>
-                <input id="userName" type="userName" name="email"
-                // value={ } onChange={ } 
-                />
+const Home = () => {
 
 
-                <label htmlFor="password">password:</label>
-                <input id="password" type="password" name="password"
-                // value={ } onChange={ } 
-                />
-              </section>
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-              <section className={styles.logInButton}>
-                <button className={styles.submitButton}>Submit</button>
-              </section>
+  const signUp = async (email, password) => {
+    const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+      credentials: 'include',
+    });
+    return res.json();
+  };
 
-            </div>
+
+  const handleChange = ({ target }) => {
+    if (target.name === 'email') setEmail(target.value);
+    if (target.name === 'password') setPassword(target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    signUp(email, password);
+  };
+
+
+  return <Home>
+    <div className={styles.homePage}>
+
+      <form onSubmit={handleSubmit}>
+        <div className={styles.leftHalf}>
+          <div className={styles.logIn}>
+            <section className={styles.logInHeader}>
+              <p>Log In/Sign Up</p>
+            </section>
+
+            <section className={styles.logInInfo}>
+              <label htmlFor="email">email:</label>
+              <input id="email" type="email" name="email" value={email} onChange={handleChange} />
+
+
+              <label htmlFor="password">password:</label>
+              <input id="password" type="password" name="password" value={password} onChange={handleChange} />
+            </section>
+
+            <section className={styles.logInButton}>
+              <button className={styles.submitButton}>Submit</button>
+            </section>
+
           </div>
-        </form>
+        </div>
+      </form>
 
 
-        <div className={styles.rightHalf}>
-          <div className={styles.quizButtons}>
-            <button>Start Quiz</button>
-            <button>Submit a Question</button>
-            <button>View Questions</button>
-          </div>
-
+      <div className={styles.rightHalf}>
+        <div className={styles.quizButtons}>
+          <button>Start Quiz</button>
+          <button>Submit a Question</button>
+          <button>View Questions</button>
         </div>
 
-      </div >
-    );
-  }
-}
+      </div>
+
+    </div >
+  </Home>;
+
+};
+
+export default Home;

@@ -8,7 +8,7 @@ export default class Submit extends Component {
       <div>
         <form>
 
-          <label>Question</label>
+          <label>Question</label>git
           <input></input>
 
           <label>Possible Answer</label>
