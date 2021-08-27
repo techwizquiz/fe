@@ -2,13 +2,16 @@
 import React, { useState } from 'react';
 import styles from './SignUp.css';
 
-const SignUp = () => {
+const SignUpPage = () => {
 
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const signUp = async (email, password) => {
+
+
+
+  const postSignUp = async (email, password) => {
     const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
       method: 'POST',
       headers: {
@@ -21,6 +24,8 @@ const SignUp = () => {
   };
 
 
+
+
   const handleChange = ({ target }) => {
     if (target.name === 'email') setEmail(target.value);
     if (target.name === 'password') setPassword(target.value);
@@ -28,7 +33,7 @@ const SignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    signUp(email, password);
+    postSignUp(email, password);
   };
 
 
@@ -65,4 +70,4 @@ const SignUp = () => {
 
 };
 
-export default SignUp;
+export default SignUpPage;
