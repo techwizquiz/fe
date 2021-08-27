@@ -2,11 +2,14 @@
 import React, { useState, } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.css';
+// import { useLogin } from '../services/SessionProvider';
 
 const Home = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // const login = useLogin();
 
   const postLogin = async (email, password) => {
     const res = await fetch(`${process.env.API_URL}/api/v1/auth/login`, {
@@ -28,7 +31,7 @@ const Home = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const user = await postLogin(email, password);
+    postLogin(email, password);
   };
 
 
@@ -36,7 +39,7 @@ const Home = () => {
     <div className={styles.homePage}>
 
       <div className={styles.leftHalf}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className={styles.logIn}>
             <section className={styles.logInHeader}>
               <p>Log In</p>
