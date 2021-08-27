@@ -8,6 +8,9 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
+
+
   const signUp = async (email, password) => {
     const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
       method: 'POST',
