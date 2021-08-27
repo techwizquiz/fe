@@ -12,4 +12,14 @@ ENTITY RELATIONSHIP DIAGRAM:
 
 <img width="241" alt="Screen Shot 2021-08-26 at 10 22 27 PM" src="https://user-images.githubusercontent.com/50570213/131076090-1c59e6ea-ab3f-46c2-a88c-577a8f203218.png">
 
+User Stories:
 
+As a user I am able to use this app to study for tests.
+
+As a user, I am able to use this app to teach my students how to code.
+
+As a user, I am able to use this app to prepare for an interview.
+
+As a user, I am able to use this app to conduct an interview
+
+As a user, I am able to use this app to show off my coding prowess to my crush
