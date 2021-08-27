@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styles from './SignUp.css';
 
+
 const SignUpPage = () => {
 
 
@@ -11,7 +12,7 @@ const SignUpPage = () => {
 
 
 
-  const postSignUp = async (email, password) => {
+  const signUp = async (email, password) => {
     const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
       method: 'POST',
       headers: {
@@ -33,7 +34,7 @@ const SignUpPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    postSignUp(email, password);
+    signUp(email, password);
   };
 
 
