@@ -5,6 +5,7 @@ import AboutUs from '../../Pages/AboutUs';
 import Submit from '../../Pages/Submit';
 import QuizPage from '../../Pages/QuizPage';
 import SignUpPage from '../../Pages/SignUp';
+import { QuestionProvider } from '../populators/QuestionProvider';
 
 
 import {
@@ -45,11 +46,14 @@ class App extends Component {
             )}
           />
 
-          <Route path="/quiz/" exact={true}
-            render={routerProps => (
-              <QuizPage {...routerProps} />
-            )}
-          />
+          <QuestionProvider>
+            <Route path="/quiz/" exact={true}
+              render={routerProps => (
+                <QuizPage {...routerProps} />
+              )}
+            />
+          </QuestionProvider>
+
 
           <Redirect to="/" />
 

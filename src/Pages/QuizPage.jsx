@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import styles from './QuizPage.css';
+import QuestionList from '../components/populators/QuestionList';
 
 export default class QuizPage extends Component {
   render() {
     return (
       <div className={styles.quizPage}>
         <div className={styles.left}>
-          <button className={styles.choiceButton}>Choice 1</button>   
-          <button className={styles.choiceButton}>Choice 2</button>   
-          <button className={styles.choiceButton}>Choice 3</button>   
-          <button className={styles.choiceButton}>Choice 4</button>   
+          <button className={styles.choiceButton}>Choice 1</button>
+          <button className={styles.choiceButton}>Choice 2</button>
+          <button className={styles.choiceButton}>Choice 3</button>
+          <button className={styles.choiceButton}>Choice 4</button>
         </div>
 
         <div className={styles.middle}>
@@ -21,15 +22,15 @@ export default class QuizPage extends Component {
             <p>Level:</p>
           </div>
           <div className={styles.question}>
-              Question
-          </div> 
+            <QuestionList />
+          </div>
           <div>
             <p>Correct:</p>
             <p>Incorrect:</p>
           </div>
-        </div>  
+        </div>
       </div>
-      
+
     );
   }
 }
