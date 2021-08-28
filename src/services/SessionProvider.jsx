@@ -1,35 +1,69 @@
-import React, { createContext, useState } from 'react';
-
+import React, { createContext, useState, useEffect, useContext } from 'react';
+import { Redirect, Route, useHistory } from 'react-router-dom';
+import { fetchVerify, postLogin, postSignup } from './auth';
 const SessionContext = createContext();
 
-export const sessionProvider = ({ children }) => {
-  const [session, setSession] = useState(null);
 
-  const postSignUp = async (email, password) => {
-    const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-      credentials: 'include',
-    });
-    return res.json();
-  };
+
+export const SessionProvider = ({ children }) => {
+  const history = useHistory();
+
+  const [session, setSession] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchVerify()
+      .then((user) => setSession(user))
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
+  }, []);
+
 
   const signup = async (email, password) => {
-    const user = await postSignUp(email, password);
+    const user = await postSignup(email, password);
+    setSession(user);
+    history.push('/dashboard');
+  };
+
+  const login = async (email, password) => {
+    setSession(await postLogin(email, password));
+    history.push('/dashboard');
   };
 
   return (
-    <SessionContext.Provider value={{ session }}>
+    <SessionContext.Provider value={{ session, loading, signup, login }}>
       {children}
     </SessionContext.Provider>
   );
 };
 
+export const PrivateRoute = (props) => {
+  const session = useSession();
+  const loading = useAuthLoading();
+
+  if (loading) return <h1>Loading....THIS SHOULD BE A SPINNER!!!</h1>;
+  if (!session && !loading) return <Redirect to="/login" />;
+
+  return <Route {...props} />;
+};
+
+export const useSession = () => {
+  const { session } = useContext(SessionContext);
+  return session;
+};
+
+export const useAuthLoading = () => {
+  const { loading } = useContext(SessionContext);
+  return loading;
+};
+
 export const useSignup = () => {
   const { signup } = useContext(SessionContext);
   return signup;
+};
+
+export const useLogin = () => {
+  const { login } = useContext(SessionContext);
+  return login;
 };
 

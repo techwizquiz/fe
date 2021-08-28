@@ -1,5 +1,5 @@
-const request = (path, method, body) => {
-  const res = await fetch(`{process.env.API_URL}${path}`, {
+const request = async (path, method, body) => {
+  const res = await fetch(`${process.env.API_URL}${path}`, {
     method,
     headers: body
       ? {
@@ -11,7 +11,7 @@ const request = (path, method, body) => {
   });
 
   return res.json();
-}
+};
 
 export const post = (path, body) => request(path, 'POST', body);
 export const get = (path) => request(path, 'GET');
