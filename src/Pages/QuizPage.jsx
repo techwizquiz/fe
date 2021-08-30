@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './QuizPage.css';
 import QuestionList from '../components/populators/QuestionList';
 
+
 export default class QuizPage extends Component {
   render() {
     return (
