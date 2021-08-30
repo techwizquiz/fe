@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './QuizPage.css';
 import QuestionList from '../components/populators/QuestionList';
-import Answers from '../components/populators/Answers';
-import QuestionLevel from '../components/populators/QuestionLevel';
+import AnswersList from '../components/populators/AnswersList';
+
 
 
 export default class QuizPage extends Component {
@@ -10,7 +10,7 @@ export default class QuizPage extends Component {
     return (
       <div className={styles.quizPage}>
         <div className={styles.left}>
-          <Answers className={styles.choiceButton}/>
+          <AnswersList className={styles.choiceButton} />
         </div>
 
         <div className={styles.middle}>

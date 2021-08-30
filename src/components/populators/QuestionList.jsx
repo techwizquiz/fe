@@ -4,14 +4,13 @@ import QuestionText from './QuestionText';
 
 const QuestionList = () => {
   const questions = useQuestions();
+  // const questionElements = questions.map((question) => (
+  //   <p key={question.questionText}>
+  //     <QuestionText {...question} />
+  //   </p>
+  // ));
 
-  const questionElements = questions.map((question) => (
-    <p key={question.questionText}>
-      <QuestionText {...question} />
-    </p>
-  ));
-
-  return <p>{questionElements}</p>;
+  return <QuestionText {...questions} />;
 };
 
 export default QuestionList;
