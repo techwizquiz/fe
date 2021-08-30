@@ -1,17 +1,17 @@
 import React from 'react';
 import { useQuestions } from './QuestionProvider';
-import Question from './Questions';
+import QuestionText from './QuestionText';
 
 const QuestionList = () => {
   const questions = useQuestions();
 
   const questionElements = questions.map((question) => (
-    <li key={question.questionText}>
-      <Question {...question} />
-    </li>
+    <p key={question.questionText}>
+      <QuestionText {...question} />
+    </p>
   ));
 
-  return <ul>{questionElements}</ul>;
+  return <p>{questionElements}</p>;
 };
 
 export default QuestionList;
