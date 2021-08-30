@@ -6,7 +6,7 @@ const QuestionList = () => {
   const questions = useQuestions();
 
   const questionElements = questions.map((question) => (
-    <li key={question.question}>
+    <li key={question.questionText}>
       <Question {...question} />
     </li>
   ));
