@@ -2,13 +2,14 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './SignUp.css';
-
+import { Avatars } from '../components/populators/Avatars';
 
 const SignUpPage = () => {
 
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [avatar, setAvatar] = useState('monster');
 
 
 
@@ -29,8 +30,9 @@ const SignUpPage = () => {
 
 
   const handleChange = ({ target }) => {
-    if (target.name === 'email') setEmail(target.value);
-    if (target.name === 'password') setPassword(target.value);
+    if(target.name === 'email') setEmail(target.value);
+    if(target.name === 'password') setPassword(target.value);
+    if(target.name === 'avatar') setAvatar(target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -59,15 +61,19 @@ const SignUpPage = () => {
             <input id="password" type="password" name="password" value={password} onChange={handleChange} />
           </section>
 
+          <section>
+            <Avatars onChange={handleChange} />
+          </section>
+
           <section className={styles.SignUpButton}>
             <button className={styles.submitButton}>Submit</button>
           </section>
 
+          <div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 
         </div>
       </form>
-
-
     </div >
   );
 
