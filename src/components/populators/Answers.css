@@ -112,3 +112,7 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
     box-shadow: 0 5px black;
     transform: translateY(6px);
 }
+
+.hidden {
+    display: none;
+}
