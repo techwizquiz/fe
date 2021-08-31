@@ -1,8 +1,25 @@
+@keyframes button-hover {
+    0% {
+        color: cyan;
+        border-color: cyan;
+    }
+    50% {
+        color: magenta;
+        border-color: magenta;
+    }
+    100% {
+        color: cyan;
+        border-color: cyan;
+    }
+}
+
 .button {
     cursor: pointer;
     height: 120px;
     width: 500px;
-    background-color: rgb(137, 170, 231);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color: cyan;
+    font-size: 135%;
     box-shadow: 0 10px rgb(7, 7, 112);
 
 }
@@ -11,7 +28,11 @@
     cursor: pointer;
     height: 120px;
     width: 500px;
-    background-color: rgb(56, 123, 248);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color: cyan;
+    font-size: 135%;
+    border: cyan 3px solid;
+    animation: button-hover 5s infinite;
     box-shadow: 0 10px rgb(7, 7, 112);
 
 }

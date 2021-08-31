@@ -1,9 +1,41 @@
+@keyframes zoom-in-out {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 180%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes button-hover {
+    0% {
+        color: cyan;
+        border-color: cyan;
+    }
+    50% {
+        color: magenta;
+        border-color: magenta;
+    }
+    100% {
+        color: cyan;
+        border-color: cyan;
+    }
+}
+
+
 .homePage {
     display: flex;
     height: 100vh;
     width: 100%;
-    background-color: rgb(255, 244, 200);
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(2,0,36,1) 67%);
+    background-position: center;
+   animation: zoom-in-out 5s infinite;
 }
+
 
 .leftHalf {
     display: flex;
@@ -40,9 +72,9 @@
     align-items: flex-end;
     justify-content: center;
     font-size: x-large;
-    background-color: cornflowerblue;
-    width: inherit
-    
+    background-color: black;
+    width: inherit;
+    color: cyan;
 }
 
 .logInHeader p {
@@ -93,6 +125,19 @@
 .quizButtons button {
     height: 125px;
     width: 350px;
-    background-color: rgb(137, 170, 231);
-
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color: cyan;
+    font-size: 175%;
+    border: none;
+    cursor: pointer;
+}
+.quizButtons button:hover {
+    height: 125px;
+    width: 350px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color: cyan;
+    font-size: 175%;
+    border: cyan 3px solid;
+    animation: button-hover 5s infinite;
+   
 }
