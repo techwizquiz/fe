@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './SignUp.css';
-
+import { Avatars } from '../components/populators/Avatars';
 
 const SignUpPage = () => {
 
@@ -57,6 +57,10 @@ const SignUpPage = () => {
 
             <label htmlFor="password">password:</label>
             <input id="password" type="password" name="password" value={password} onChange={handleChange} />
+          </section>
+
+          <section>
+            <Avatars onChange={handleChange} />
           </section>
 
           <section className={styles.SignUpButton}>
