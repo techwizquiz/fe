@@ -9,6 +9,7 @@ const SignUpPage = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [avatar, setAvatar] = useState('monster');
 
 
 
@@ -29,8 +30,9 @@ const SignUpPage = () => {
 
 
   const handleChange = ({ target }) => {
-    if (target.name === 'email') setEmail(target.value);
-    if (target.name === 'password') setPassword(target.value);
+    if(target.name === 'email') setEmail(target.value);
+    if(target.name === 'password') setPassword(target.value);
+    if(target.name === 'avatar') setAvatar(target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -67,11 +69,11 @@ const SignUpPage = () => {
             <button className={styles.submitButton}>Submit</button>
           </section>
 
+          <div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 
         </div>
       </form>
-
-
     </div >
   );
 

@@ -53,3 +53,11 @@
   background-color: cornflowerblue;
   cursor: pointer;
 }
+
+.noBorder {
+  border: solid 2px transparent;
+}
+
+.withBorder {
+  border: solid 2px black;
+}
