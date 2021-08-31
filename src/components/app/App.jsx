@@ -6,8 +6,8 @@ import AboutUs from '../../Pages/AboutUs';
 import Submit from '../../Pages/Submit';
 import QuizPage from '../../Pages/QuizPage';
 import SignUpPage from '../../Pages/SignUp';
-import { useSetWinLose } from '../../services/SessionProvider';
-import styles from './App.css';
+
+
 import { QuestionProvider } from '../populators/QuestionProvider';
 
 
@@ -19,7 +19,7 @@ import {
 
 
 const App = () => {
-  const winLose = useSetWinLose();
+
 
 
   return (
@@ -54,17 +54,14 @@ const App = () => {
         />
 
         <QuestionProvider>
-          <div className={
-            winLose === 'win' ?
-              styles.win : styles.lose
-          }>
+         
 
-            <Route path="/quiz/" exact={true}
-              render={routerProps => (
-                <QuizPage {...routerProps} />
-              )}
-            />
-          </div>
+          <Route path="/quiz/" exact={true}
+            render={routerProps => (
+              <QuizPage {...routerProps} />
+            )}
+          />
+         
         </QuestionProvider>
 
 

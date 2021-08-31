@@ -77,16 +77,16 @@
     box-shadow: 0 6px darkblue;
 }
 
-.middle {
+/* .middle {
     height: 100%;
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     
-}
+} */
 
-.submitButton {
+/* .submitButton {
     cursor: pointer;
     border-radius: 50%;
     outline: cornflowerblue;
@@ -115,7 +115,7 @@
 
     box-shadow: 0 5px black;
     transform: translateY(6px);
-}
+} */
 
 .right {
     height: 100%;
