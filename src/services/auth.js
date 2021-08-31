@@ -1,4 +1,4 @@
-import { get, post } from './request';
+import { get, post } from './Request';
 
 export const postSignup = (email, password) => {
   return post('/api/v1/auth/signup', { email, password });
