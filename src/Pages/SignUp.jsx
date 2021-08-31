@@ -1,11 +1,12 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './SignUp.css';
 
 
 const SignUpPage = () => {
 
-
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -34,7 +35,8 @@ const SignUpPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    signUp(email, password);
+    signUp(email, password).then(() => history.push('/home'));
+
   };
 
 
