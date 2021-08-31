@@ -41,54 +41,54 @@ const Home = () => {
 
 
   return (
-    // <div className={styles.homePage}>
+  // <div className={styles.homePage}>
 
-    //   <div className={styles.leftHalf}>
-    //     <form onSubmit={handleSubmit}>
-    //       <div className={styles.logIn}>
-    //         <section className={styles.logInHeader}>
-    //           <p>Log In</p>
-
-
-    //         </section>
-
-    //         <section className={styles.logInInfo}>
-    //           <label htmlFor="email">email:</label>
-    //           <input id="email" type="email" name="email"
-    //             value={email} onChange={handleChange}
-    //           />
+  //   <div className={styles.leftHalf}>
+  //     <form onSubmit={handleSubmit}>
+  //       <div className={styles.logIn}>
+  //         <section className={styles.logInHeader}>
+  //           <p>Log In</p>
 
 
-    //           <label htmlFor="password">password:</label>
-    //           <input id="password" type="password" name="password"
-    //             value={password} onChange={handleChange}
-    //           />
+  //         </section>
 
-    //           <Link to="/signup">Sign Up</Link>
-    //         </section>
-
-    //         <section className={styles.logInButton}>
-    //           <button className={styles.submitButton}>Submit</button>
-    //         </section>
-
-    //       </div>
-    //     </form>
-    //   </div>
+  //         <section className={styles.logInInfo}>
+  //           <label htmlFor="email">email:</label>
+  //           <input id="email" type="email" name="email"
+  //             value={email} onChange={handleChange}
+  //           />
 
 
-    <div className={styles.rightHalf}>
-      <div className={styles.quizButtons}>
-        <Link to="/quiz/">
-          <button>Start Quiz</button>
-        </Link>
-        <Link to="/submit">
-          <button>Submit a Question</button>
-        </Link>
-        <button>View Questions</button>
+  //           <label htmlFor="password">password:</label>
+  //           <input id="password" type="password" name="password"
+  //             value={password} onChange={handleChange}
+  //           />
+
+  //           <Link to="/signup">Sign Up</Link>
+  //         </section>
+
+  //         <section className={styles.logInButton}>
+  //           <button className={styles.submitButton}>Submit</button>
+  //         </section>
+
+  //       </div>
+  //     </form>
+  //   </div>
+
+    <div className={styles.homePage}>
+      <div className={styles.rightHalf}>
+        <div className={styles.quizButtons}>
+          <Link to="/quiz/">
+            <button>Start Quiz</button>
+          </Link>
+          <Link to="/submit">
+            <button>Submit a Question</button>
+          </Link>
+          <button>View Questions</button>
+        </div>
+
       </div>
-
     </div>
-
 
   );
 

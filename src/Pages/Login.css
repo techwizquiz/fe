@@ -1,0 +1,111 @@
+@keyframes zoom-in-out {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 180%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes button-hover {
+    0% {
+        color: cyan;
+        border-color: cyan;
+    }
+    50% {
+        color: magenta;
+        border-color: magenta;
+    }
+    100% {
+        color: cyan;
+        border-color: cyan;
+    }
+}
+
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(2,0,36,1) 67%);
+    background-position: center;
+   animation: zoom-in-out 5s infinite;
+}
+
+.logIn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    height: 120%;
+    width:150%;
+    color:cyan;
+    font-size: 125%;
+    border-radius: 15%;
+}
+
+.logInHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.logIn p {
+    font-size: 165%;
+    display: flex;
+   
+}
+
+.logInInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: left;
+    align-items: center;
+}
+
+.logInInfo label {
+    display: flex;
+    flex-direction: column;
+    
+    
+    margin: 20px
+}
+
+.link {
+    color: cyan;
+}
+
+.logInButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submitButton {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color:cyan;
+    height: 55px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.submitButton:hover {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color:cyan;
+    height: 55px;
+    width: 100px;
+    margin-bottom: 20px;
+    border: cyan 3px solid;
+    animation: button-hover 5s infinite;
+}

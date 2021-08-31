@@ -13,9 +13,7 @@ export default class QuizPage extends Component {
           <AnswersList className={styles.choiceButton} />
         </div>
 
-        <div className={styles.middle}>
-          <button className={styles.submitButton}>Submit</button>
-        </div>
+        
 
         <div className={styles.right}>
           <div>
