@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-import avatars from '../../../assets/avatars.svg';
 // import styles from './Avatars.css';
 
 export const Avatars = ({ onChange }) => {
@@ -10,21 +9,15 @@ export const Avatars = ({ onChange }) => {
       <div>
         <label>
           <input type="radio" name="avatar" value="monster" onChange={onChange} />
-          <svg overflow="visible"> 
-            <use href={avatars + '#monster'} />
-          </svg>
+          <img src="https://image.flaticon.com/icons/png/128/2332/2332630.png" />
         </label>
         <label>
-          <input type="radio" name="avatar" value="wizardHoodie" onChange={onChange} />
-          <svg overflow="visible"> 
-            <use href={avatars + '#wizard-hoodie'} />
-          </svg>
+          <input type="radio" name="avatar" value="youngWizard" onChange={onChange} /> 
+          <img src="https://image.flaticon.com/icons/png/128/2332/2332873.png" />
         </label>
         <label>
           <input type="radio" name="avatar" value="goddess" onChange={onChange} />
-          <svg overflow="visible"> 
-            <use href={avatars + '#goddess'} />
-          </svg>
+          <img src="https://image.flaticon.com/icons/png/128/2332/2332754.png" />
         </label>
       </div>
     </>
