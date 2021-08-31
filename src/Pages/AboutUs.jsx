@@ -5,7 +5,7 @@ export default class AboutUs extends Component {
   render() {
     return (
       <div className={styles.aboutUs}>
-        <p>About Us</p>      
+        <p className={styles.title}>About Us</p>      
       </div>
     );
   }
