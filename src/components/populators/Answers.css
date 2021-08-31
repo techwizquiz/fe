@@ -20,6 +20,7 @@
 .left {
     display: flex;
     flex-direction: column;
+    
 }
 
 .left pre {
@@ -41,7 +42,8 @@
     color: cyan;
     font-size: 135%;
     box-shadow: 0 10px rgb(7, 7, 112);
-    
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .button:hover {
@@ -56,6 +58,18 @@
     box-shadow: 0 10px rgb(7, 7, 112);
     
 }
+
+.button:focus {
+    height: 120px;
+    width: 500px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color: cyan;
+    font-size: 135%;
+    border: cyan 8px solid;
+    animation: button-hover 2s infinite;
+    box-shadow: 0 10px rgb(7, 7, 112);
+}
+
 .button:active {
     cursor: pointer;
     height: 120px;
@@ -116,3 +130,23 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
 .hidden {
     display: none;
 }
+
+.nextQuestion {
+    cursor: pointer;
+    height: 70px;
+    width: 100px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color: cyan;
+    font-size: 135%;
+    box-shadow: 0 10px rgb(7, 7, 112);
+ }
+ .nextQuestion:hover {
+    cursor: pointer;
+    height: 70px;
+    width: 100px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    color: cyan;
+    font-size: 135%;
+    box-shadow: 0 10px rgb(7, 7, 112);
+    animation: button-hover 5s infinite;
+ }

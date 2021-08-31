@@ -13,7 +13,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
   const choice = (e) => {
     console.log('selectedCHOICE', selectedChoice, 'answer', answer);
     // setSeenQuestionIds: add new id to array of ids in state
-    if (selectedChoice === answer) {
+    if(selectedChoice === answer) {
       setWinLose('win');
     } else {
       setWinLose('lose');
@@ -41,7 +41,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
           <button onClick={choice} className={styles.submitButton}>Submit</button>
         </div>
 
-        <button onClick={() => window.location.reload(false)}>Next Question</button>
+        <button className={styles.nextQuestion} onClick={() => window.location.reload(false)}>Next Question</button>
 
 
       </div>
