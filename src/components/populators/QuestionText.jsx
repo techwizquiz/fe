@@ -6,7 +6,7 @@ const QuestionText = ({ questionTitle, questionText }) => {
   return (
     <div>
       <p>{questionTitle}</p>
-      <p>{questionText}</p>
+      <pre>{questionText}</pre>
     </div>
   );
 };

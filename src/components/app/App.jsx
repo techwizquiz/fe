@@ -6,6 +6,8 @@ import AboutUs from '../../Pages/AboutUs';
 import Submit from '../../Pages/Submit';
 import QuizPage from '../../Pages/QuizPage';
 import SignUpPage from '../../Pages/SignUp';
+import { useSetWinLose } from '../../services/SessionProvider';
+import styles from './App.css';
 import { QuestionProvider } from '../populators/QuestionProvider';
 
 
@@ -16,63 +18,67 @@ import {
 } from 'react-router-dom';
 
 
-class App extends Component {
-  render() {
-
-    return (
-      <>
+const App = () => {
+  const winLose = useSetWinLose();
 
 
+  return (
+    <>
+      <Header />
 
-        <Header />
+      <Switch>
 
-        <Switch>
+        <Route path="/" exact={true}
+          render={routerProps => (
+            <Login {...routerProps} />
+          )}
+        />
 
-          <Route path="/" exact={true}
-            render={routerProps => (
-              <Login {...routerProps} />
-            )}
-          />
+        <Route path="/home/" exact={true}
+          render={routerProps => (
+            <Home {...routerProps} />
+          )}
+        />
 
-          <Route path="/home/" exact={true}
-            render={routerProps => (
-              <Home {...routerProps} />
-            )}
-          />
-
-          <Route path="/signup/" exact={true}
-            render={routerProps => (
-              <SignUpPage {...routerProps} />
-            )}
-          />
+        <Route path="/signup/" exact={true}
+          render={routerProps => (
+            <SignUpPage {...routerProps} />
+          )}
+        />
 
 
-          <Route path="/submit/" exact={true}
-            render={routerProps => (
-              <Submit {...routerProps} />
-            )}
-          />
+        <Route path="/submit/" exact={true}
+          render={routerProps => (
+            <Submit {...routerProps} />
+          )}
+        />
 
-          <QuestionProvider>
+        <QuestionProvider>
+          <div className={
+            winLose === 'win' ?
+              styles.win : styles.lose
+          }>
+
             <Route path="/quiz/" exact={true}
               render={routerProps => (
                 <QuizPage {...routerProps} />
               )}
             />
-          </QuestionProvider>
+          </div>
+        </QuestionProvider>
 
 
-          <Redirect to="/" />
+        <Redirect to="/" />
 
-        </Switch>
+      </Switch>
 
-        <AboutUs />
+      <AboutUs />
 
-      </>
-    );
-  }
+    </>
+  );
+};
 
 
-}
+
 
 export default App;

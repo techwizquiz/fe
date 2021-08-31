@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { Redirect, Route, useHistory } from 'react-router-dom';
 import { fetchVerify, postLogin, postSignup } from './auth';
@@ -10,6 +11,7 @@ export const SessionProvider = ({ children }) => {
 
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [winLose, setWinLose] = useState('');
 
   useEffect(() => {
     fetchVerify()
@@ -31,7 +33,7 @@ export const SessionProvider = ({ children }) => {
   };
 
   return (
-    <SessionContext.Provider value={{ session, loading, signup, login }}>
+    <SessionContext.Provider value={{ session, loading, signup, login, winLose, setWinLose }}>
       {children}
     </SessionContext.Provider>
   );
@@ -66,4 +68,10 @@ export const useLogin = () => {
   const { login } = useContext(SessionContext);
   return login;
 };
+
+export const useSetWinLose = () => {
+  const { setWinLose, winLose } = useContext(SessionContext);
+  return { setWinLose, winLose };
+};
+
 
