@@ -28,7 +28,7 @@ const Answers = ({ a, b, c, d, answer }) => {
     <>
       <div className={styles.answersPage}>
         <div className={styles.left}>
-          <label><button className={styles.button}  type="radio" name="answer" value="a" onClick={({ target }) => setSelectedChoice(target.value)} key={a}>A: <pre className={styles.neutral || winLose === 'win' ?
+          <label><button className={styles.button}  type="radio" name="answer" value="a" onClick={({ target }) => setSelectedChoice(target.value)} key={a}>A: <pre className={winLose === 'win' ?
             styles.win : styles.lose}>{a}</pre></button></label> 
 
           <label><button className={styles.button}  type="radio" name="answer" value="b" onClick={({ target }) => setSelectedChoice(target.value)} key={b}>B: <pre className={winLose === 'win' ?
