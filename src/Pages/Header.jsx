@@ -11,7 +11,7 @@ export default class Header extends Component {
         </div>
 
         <div className={styles.headerNavLinks}>
-          <Link className={styles.link} to="/">
+          <Link className={styles.link} to="/home/">
             <p>Home</p>
           </Link>
           <p>Log Out</p>

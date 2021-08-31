@@ -24,8 +24,8 @@ const Login = () => {
 
 
   const handleChange = ({ target }) => {
-    if (target.name === 'email') setEmail(target.value);
-    if (target.name === 'password') setPassword(target.value);
+    if(target.name === 'email') setEmail(target.value);
+    if(target.name === 'password') setPassword(target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -38,37 +38,39 @@ const Login = () => {
   return (
     <div className={styles.homePage}>
 
-      <div className={styles.leftHalf}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.logIn}>
-            <section className={styles.logInHeader}>
-              <p>Log In</p>
+      
+      <form onSubmit={handleSubmit}>
+        <div className={styles.logIn}>
+          <section className={styles.logInHeader}>
+            <p>Log In</p>
 
 
-            </section>
+          </section>
 
-            <section className={styles.logInInfo}>
-              <label htmlFor="email">email:</label>
+          <section className={styles.logInInfo}>
+            <label htmlFor="email">email:
               <input id="email" type="email" name="email"
                 value={email} onChange={handleChange}
               />
+            </label>
 
-
-              <label htmlFor="password">password:</label>
+            <label htmlFor="password">password:
               <input id="password" type="password" name="password"
                 value={password} onChange={handleChange}
               />
+            </label>
 
-              <Link to="/signup">Sign Up</Link>
-            </section>
+           
+          </section>
 
-            <section className={styles.logInButton}>
-              <button className={styles.submitButton}>Submit</button>
-            </section>
+          <section className={styles.logInButton}>
+            <button className={styles.submitButton}>Submit</button>
+            <Link className={styles.link} to="/signup">Sign Up</Link>
+          </section>
 
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
+      
     </div>
   );
 };
