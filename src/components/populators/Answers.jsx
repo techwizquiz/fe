@@ -1,17 +1,47 @@
 /* eslint-disable max-len */
-import React from 'react';
-import styles from './Answers.css';
+import React, { useState } from 'react';
+import { useSetWinLose } from '../../services/SessionProvider';
 
-const Answers = ({ a, b, c, d }) => {
+
+const Answers = ({ a, b, c, d, answer }) => {
+
+  const [selectedChoice, setSelectedChoice] = useState(null);
+
+  const { setWinLose, winLose } = useSetWinLose();
+
+
+  const choice = (e) => {
+    console.log('selectedCHOICE', selectedChoice, 'HAHAHAHA', answer);
+    // setSeenQuestionIds: add new id to array of ids in state
+    if (selectedChoice === answer) {
+      setWinLose('win');
+    } else {
+      setWinLose('lose');
+    }
+    console.log('helllllo', winLose);
+  };
+
+
   return (
     <>
-      <button type="radio" className={styles.button} key={a}>{a}</button>
-      <button type="radio" className={styles.button} key={b}>{b}</button>
-      <button type="radio" className={styles.button} key={c}>{c}</button>
-      <button type="radio" className={styles.button} key={d}>{d}</button>
+      <div>
+        <label><input type="radio" name="answer" value="a" onClick={({ target }) => setSelectedChoice(target.value)} key={a} />A: <pre>{a}</pre></label>
+
+        <label><input type="radio" name="answer" value="b" onClick={({ target }) => setSelectedChoice(target.value)} key={b} />B: <pre>{b}</pre></label>
+
+        <label><input type="radio" name="answer" value="c" onClick={({ target }) => setSelectedChoice(target.value)} key={c} />C: <pre>{c}</pre></label>
+
+        <label><input type="radio" name="answer" value="d" onClick={({ target }) => setSelectedChoice(target.value)} key={d} />D: <pre>{d}</pre></label>
+
+        {/* <button onClick={choice}>Submit</button> */}
+        <button onClick={choice}>Submit</button>
+
+      </div>
+
     </>
   );
 
 };
 
 export default Answers;
+
