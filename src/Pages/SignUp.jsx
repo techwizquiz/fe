@@ -9,25 +9,19 @@ const SignUpPage = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [avatar, setAvatar] = useState('monster');
+  const [avatar, setAvatar] = useState('');
 
-
-
-
-  const signUp = async (email, password) => {
+  const signUp = async (email, password, avatar) => {
     const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, avatar }),
       credentials: 'include',
     });
     return res.json();
   };
-
-
-
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
@@ -37,7 +31,7 @@ const SignUpPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    signUp(email, password).then(() => history.push('/home'));
+    signUp(email, password, avatar).then(() => history.push('/home'));
 
   };
 
@@ -61,7 +55,7 @@ const SignUpPage = () => {
             <input id="password" type="password" name="password" value={password} onChange={handleChange} />
           </section>
 
-          <section>
+          <section className={styles.Avatars}>
             <Avatars onChange={handleChange} />
           </section>
 
@@ -69,11 +63,11 @@ const SignUpPage = () => {
             <button className={styles.submitButton}>Submit</button>
           </section>
 
-          <div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-
         </div>
       </form>
+      <footer className={styles.footer}>
+        Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </footer>
     </div >
   );
 

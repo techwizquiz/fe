@@ -23,8 +23,8 @@ export const SessionProvider = ({ children }) => {
   }, []);
 
 
-  const signup = async (email, password) => {
-    const user = await postSignup(email, password);
+  const signup = async (email, password, avatar) => {
+    const user = await postSignup(email, password, avatar);
     setSession(user);
     history.push('/dashboard');
   };
