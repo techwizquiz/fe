@@ -128,11 +128,20 @@
 }
 
 .question {
+    display: inline-flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
     border: 1px solid black;
-    height: 500px;
-    width:400px;
+    min-height: 500px;
+    min-width: 400px;
     background-color: black;
     color: cyan;
     font-size: 140%;
     
+}
+
+.questionLIst {
+    display: inline-flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
 }

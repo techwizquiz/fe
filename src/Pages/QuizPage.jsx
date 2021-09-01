@@ -16,15 +16,8 @@ export default class QuizPage extends Component {
         
 
         <div className={styles.right}>
-          <div>
-            <p>Level: </p>
-          </div>
           <div className={styles.question}>
-            <QuestionList />
-          </div>
-          <div>
-            <p>Correct:</p>
-            <p>Incorrect:</p>
+            <QuestionList className={styles.questionList}/>
           </div>
         </div>
       </div>

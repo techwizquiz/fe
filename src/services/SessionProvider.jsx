@@ -11,7 +11,9 @@ export const SessionProvider = ({ children }) => {
 
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [winLose, setWinLose] = useState('');
+  const [winLose, setWinLose] = useState('neutral');
+  const [correct, setCorrect] = useState(null);
+  const [incorrect, setIncorrect] = useState(null);
 
   useEffect(() => {
     fetchVerify()
@@ -33,7 +35,7 @@ export const SessionProvider = ({ children }) => {
   };
 
   return (
-    <SessionContext.Provider value={{ session, loading, signup, login, winLose, setWinLose }}>
+    <SessionContext.Provider value={{ session, loading, signup, login, winLose, setWinLose, correct, setCorrect, incorrect, setIncorrect }}>
       {children}
     </SessionContext.Provider>
   );
@@ -43,8 +45,8 @@ export const PrivateRoute = (props) => {
   const session = useSession();
   const loading = useAuthLoading();
 
-  if (loading) return <h1>Loading....THIS SHOULD BE A SPINNER!!!</h1>;
-  if (!session && !loading) return <Redirect to="/login" />;
+  if(loading) return <h1>Loading....THIS SHOULD BE A SPINNER!!!</h1>;
+  if(!session && !loading) return <Redirect to="/login" />;
 
   return <Route {...props} />;
 };
@@ -74,4 +76,13 @@ export const useSetWinLose = () => {
   return { setWinLose, winLose };
 };
 
+export const useSetCorrect = () => {
+  const { correct, setCorrect } = useContext(SessionContext);
+  return { correct, setCorrect };
+};
+
+export const useSetIncorrect = () => {
+  const { incorrect, setIncorrect } = useContext(SessionContext);
+  return { incorrect, setIncorrect };
+};
 

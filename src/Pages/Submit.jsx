@@ -34,34 +34,34 @@ const Submit = () => {
     return res.json();
   };
 
-  const correctAnswer = (choice) => {
-    if (choice.id === 'correct-A') {
-      return 'a';
-    } else if (choice.id === 'correct-B') {
-      return 'b';
-    } else if (choice.id === 'correct-C') {
-      return 'c';
-    } else if (choice.id === 'correct-D') {
-      return 'd';
-    } else return 'user has not chosen';
-  };
+  // const correctAnswer = (choice) => {
+  //   if(choice.id === 'correct-A') {
+  //     return 'a';
+  //   } else if(choice.id === 'correct-B') {
+  //     return 'b';
+  //   } else if(choice.id === 'correct-C') {
+  //     return 'c';
+  //   } else if(choice.id === 'correct-D') {
+  //     return 'd';
+  //   } else return 'user has not chosen';
+  // };
 
   const handleChange = ({ target }) => {
-    if (target.name === 'question') setQuestion(target.value);
+    if(target.name === 'question') setQuestion(target.value);
     // if (target.name === 'correct') setAnswer(correctAnswer(choice));
-    if (target.name === 'question-title') setQuestionTitle(target.value);
-    if (target.name === 'possible-A') setChoiceA(target.value);
-    if (target.name === 'possible-B') setChoiceB(target.value);
-    if (target.name === 'possible-C') setChoiceC(target.value);
-    if (target.name === 'possible-D') setChoiceD(target.value);
-    if (target.name === 'language') setLanguage(target.value);
-    if (target.name === 'explanation') setExplanation(target.value);
-    if (target.name === 'level') setLevel(target.value);
+    if(target.name === 'question-title') setQuestionTitle(target.value);
+    if(target.name === 'possible-A') setChoiceA(target.value);
+    if(target.name === 'possible-B') setChoiceB(target.value);
+    if(target.name === 'possible-C') setChoiceC(target.value);
+    if(target.name === 'possible-D') setChoiceD(target.value);
+    if(target.name === 'language') setLanguage(target.value);
+    if(target.name === 'explanation') setExplanation(target.value);
+    if(target.name === 'level') setLevel(target.value);
 
-    if (target.id === 'a') setAnswer(target.value);
-    if (target.id === 'b') setAnswer(target.value);
-    if (target.id === 'c') setAnswer(target.value);
-    if (target.id === 'd') setAnswer(target.value);
+    if(target.id === 'a') setAnswer(target.value);
+    if(target.id === 'b') setAnswer(target.value);
+    if(target.id === 'c') setAnswer(target.value);
+    if(target.id === 'd') setAnswer(target.value);
   };
 
   const handleSubmit = async (event) => {

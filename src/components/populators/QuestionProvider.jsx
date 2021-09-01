@@ -26,3 +26,8 @@ export const useQuestions = () => {
   const { questions } = useContext(QuestionContext);
   return questions;
 };
+
+export const useSetQuestions = () => {
+  const { setQuestions } = useContext(QuestionContext);
+  return setQuestions;
+};
