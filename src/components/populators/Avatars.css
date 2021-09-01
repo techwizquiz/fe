@@ -2,9 +2,19 @@
   visibility: hidden;
 }
 
+.radioButton:selected + .img{
+  box-shadow:5px 5px 5px 5px gray;
+}
+
 .label {
   cursor: pointer;
 }
+
+[type=radio]:checked + img {
+  border: 2px solid #f00;
+  border-radius: 10px;
+}
+
 .img {
   border: 1px black solid;
   border-radius: 10px;
@@ -15,6 +25,22 @@
 .img:hover {
   box-shadow:5px 5px 5px 5px gray;
 }
+
+img:focus{
+  box-shadow:5px 5px 5px 5px gray;
+}
+
+.clickedBorder {
+  visibility: hidden;
+  box-shadow:5px 5px 5px 5px gray;
+  border: 1px gray solid;
+  border-radius: 10px;
+}
+
+/* .img:active {
+  cursor:pointer;
+  border: 1px gray solid;
+} */
 
 h4 {
   display: flex;
