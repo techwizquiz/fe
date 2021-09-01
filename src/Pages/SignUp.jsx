@@ -55,17 +55,13 @@ const SignUpPage = () => {
             <input id="password" type="password" name="password" value={password} onChange={handleChange} />
           </section>
 
-          <section>
+          <section className={styles.Avatars}>
             <Avatars onChange={handleChange} />
           </section>
 
           <section className={styles.SignUpButton}>
             <button className={styles.submitButton}>Submit</button>
           </section>
-
-          {/* <div>
-            Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-          </div> */}
 
         </div>
       </form>

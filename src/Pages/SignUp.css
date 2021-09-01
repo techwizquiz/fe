@@ -9,6 +9,7 @@
 .SignUp {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   border: 1px black solid;
   border-radius: 10px;
   width: 100%;
@@ -16,6 +17,11 @@
   align-items: center;
   background-color: rgb(137, 170, 231);
   padding-bottom: 1rem;
+}
+
+.Avatars {
+  justify-content: space-evenly;
+  padding-right: 20px;
 }
 
 .SignUpHeader {
@@ -29,7 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 350px;
+  width: 50%;
   font-size: x-large;
 }
 
