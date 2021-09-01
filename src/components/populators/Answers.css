@@ -24,20 +24,21 @@
 }
 
 .left pre {
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
     word-wrap: break-word;
 }
 
 .right {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .button {
     cursor: pointer;
-    height: 120px;
-    width: 500px;
+    min-height: 120px;
+    min-width: 500px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
@@ -93,6 +94,7 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
 
 .neutral {
     font-size: 160%;
+    background: blue;
 }
 
 .submitButton {
@@ -127,6 +129,20 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
     transform: translateY(6px);
 }
 
+.disabledButton {
+    pointer-events: none;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: cornflowerblue;
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(90deg, rgb(83, 82, 105) 96%, rgb(114, 113, 136) 100%);
+    color: cyan;
+    font-size: 175%;
+    box-shadow: 0 9px rgb(26, 34, 75);
+    margin-left: 20px;
+}
+
 .hidden {
     display: none;
 }
@@ -139,6 +155,7 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
     color: cyan;
     font-size: 135%;
     box-shadow: 0 10px rgb(7, 7, 112);
+    margin: 20px
  }
  .nextQuestion:hover {
     cursor: pointer;
@@ -149,4 +166,18 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
     font-size: 135%;
     box-shadow: 0 10px rgb(7, 7, 112);
     animation: button-hover 5s infinite;
+ }
+
+ .nextQuestion:active {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 96%,  rgba(2,0,36,1) 100%);
+
+    box-shadow: 0 5px black;
+    transform: translateY(6px);
+ }
+
+ .scores {
+     display: flex;
+     flex-direction: column;
+     background: black;
+     color: cyan;
  }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuestions } from './QuestionProvider';
 import QuestionText from './QuestionText';
+import styles from './QuestionList.css';
 
 const QuestionList = () => {
   const questions = useQuestions();
@@ -10,7 +11,7 @@ const QuestionList = () => {
   //   </p>
   // ));
 
-  return <QuestionText {...questions} />;
+  return <QuestionText {...questions} className={styles.questionText}/>;
 };
 
 export default QuestionList;
