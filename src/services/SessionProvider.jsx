@@ -11,7 +11,7 @@ export const SessionProvider = ({ children }) => {
 
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [winLose, setWinLose] = useState('');
+  const [winLose, setWinLose] = useState('neutral');
   const [correct, setCorrect] = useState(null);
   const [incorrect, setIncorrect] = useState(null);
 
