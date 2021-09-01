@@ -7,8 +7,9 @@
 }
 .img {
   border: 1px black solid;
+  border-radius: 10px;
   width: 100px;
-  height: 100px;
+  height: auto;
 }
 
 .img:hover {
