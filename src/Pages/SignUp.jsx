@@ -9,7 +9,7 @@ const SignUpPage = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [avatar, setAvatar] = useState('monster');
+  const [avatar, setAvatar] = useState('');
 
   const signUp = async (email, password, avatar) => {
     const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
