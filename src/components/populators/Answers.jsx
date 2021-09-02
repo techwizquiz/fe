@@ -73,7 +73,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
             <img src={winLose === 'win' ? smilingWizard : grimReaper} />
           </div>
 
-          <button onClick={choice} className={round === 'active' ? styles.submitButton : styles.disabledButton}>Submit</button>
+          <button onClick={choice} className={round === 'active' ? styles.submitButton : styles.disabledButton}>Submit<br></br>{selectedChoice.toUpperCase()}</button>
 
           <button className={styles.nextQuestion} onClick={handleNewQuestion} id="submitButton">Next Question</button>
           <div className={styles.scores}>
