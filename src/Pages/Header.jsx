@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthLoading, useSession } from '../services/SessionProvider.jsx';
 import styles from './Header.css';
-import monster from '../../assets/png/004-monster.png';
-import youngWizard from '../../assets/png/054-wizard.png';
-import goblin from '../../assets/png/031-goblin.png';
-import skullWizard from '../../assets/png/045-wizard.png';
-import octopus from '../../assets/png/034-sea-monster.png';
+// import monster from '../../assets/png/monster.png';
+// import youngWizard from '../../assets/png/youngWizard.png';
+// import goblin from '../../assets/png/goblin.png';
+// import skullWizard from '../../assets/png/skullWizard.png';
+// import chimera from '../../assets/png/chimera.png';
 
 const Header = () => {
   const user = useSession();
@@ -17,8 +17,6 @@ const Header = () => {
     <h1>...Loading</h1>
   );
 
-  console.log('user', user);
-  
   return (
     <div className={styles.header}>
       <div className={styles.headerTitle}>
@@ -27,10 +25,10 @@ const Header = () => {
 
       {user ? 
         <div>
-          <img src={user?.avatar}></img>
+          <img src={`../assets/png/${user?.user.avatar}.png`}></img>
         </div> :
         null
-      }
+      } 
 
       <div className={styles.headerNavLinks}>
         <Link className={styles.link} to="/home/">

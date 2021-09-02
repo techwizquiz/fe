@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { useSetCorrect, useSetIncorrect, useSetWinLose } from '../../services/SessionProvider';
 import styles from './Answers.css';
-import grimReaper from '../../../assets/png/032-grim-reaper.png';
-import smilingWizard from '../../../assets/png/068-wizard.png';
+import grimReaper from '../../../public/assets/png/032-grim-reaper.png';
+import smilingWizard from '../../../public/assets/png/068-wizard.png';
 import { fetchQuestions, fetchRandomQuestions } from '../../services/FetchQuestion';
 import { useSetQuestions } from './QuestionProvider';
 
