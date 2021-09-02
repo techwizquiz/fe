@@ -14,14 +14,17 @@
     0% {
         color: cyan;
         border-color: cyan;
+        font-weight: bolder;
     }
     50% {
         color: magenta;
         border-color: magenta;
+        font-weight: bolder;
     }
     100% {
         color: cyan;
         border-color: cyan;
+        font-weight: bolder;
     }
 }
 

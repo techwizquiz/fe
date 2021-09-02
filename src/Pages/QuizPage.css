@@ -1,13 +1,13 @@
-@keyframes zoom-in-out {
+@keyframes gradient {
     0% {
-        background-size: 100%;
-    }
-    50% {
-        background-size: 180%;
-    }
-    100% {
-        background-size: 100%;
-    }
+        background-position: 0% 40%;
+      }
+      50% {
+        background-position: 100% 40%;
+      }
+      100% {
+        background-position: 0% 40%;
+      }
 }
 
 @keyframes button-hover {
@@ -30,10 +30,11 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
-    background: rgb(0,212,255);
-    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(2,0,36,1) 67%);
-    animation: zoom-in-out 5s infinite;
+    background: rgb(3,122,144);
+    background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
+    animation: gradient 12s ease infinite;
     background-position: center;
+    background-size: 150% 150%;
 }
 
 .left {
@@ -77,45 +78,6 @@
     box-shadow: 0 6px darkblue;
 }
 
-/* .middle {
-    height: 100%;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-} */
-
-/* .submitButton {
-    cursor: pointer;
-    border-radius: 50%;
-    outline: cornflowerblue;
-    height: 200px;
-    width: 200px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(2,0,36,1) 100%);
-    color: cyan;
-    font-size: 175%;
-    box-shadow: 0 9px rgb(26, 34, 75);
-}
-
-.submitButton:hover {
-    cursor: pointer;
-    border-radius: 50%;
-    outline: cornflowerblue;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(56, 123, 248);
-    box-shadow: 0 9px rgb(26, 34, 75);
-    animation: button-hover 5s infinite;
-
-}
-
-.submitButton:active {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 96%,  rgba(2,0,36,1) 100%);
-
-    box-shadow: 0 5px black;
-    transform: translateY(6px);
-} */
 
 .right {
     height: 100%;
@@ -131,17 +93,19 @@
     display: inline-flex;
     flex-wrap: wrap;
     word-wrap: break-word;
-    border: 1px solid black;
-    min-height: 500px;
-    min-width: 400px;
+    border: rgb(104, 103, 103) 3px solid;
+    min-height: 520px;
+    min-width: 430px;
     background-color: black;
     color: cyan;
     font-size: 140%;
-    
+    border-radius: 3%;
+    justify-items: center;
 }
 
 .questionList {
     display: inline-flex;
     flex-wrap: wrap;
     word-wrap: break-word;
+   justify-self: center;
 }
