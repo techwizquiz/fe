@@ -24,9 +24,9 @@ const SignUpPage = () => {
   };
 
   const handleChange = ({ target }) => {
-    if(target.name === 'email') setEmail(target.value);
-    if(target.name === 'password') setPassword(target.value);
-    if(target.name === 'avatar') setAvatar(target.value);
+    if (target.name === 'email') setEmail(target.value);
+    if (target.name === 'password') setPassword(target.value);
+    if (target.name === 'avatar') setAvatar(target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -43,13 +43,14 @@ const SignUpPage = () => {
 
         <div className={styles.SignUp}>
           <section className={styles.SignUpHeader}>
-            <p>Sign Up</p>
+            <p>SIGN UP</p>
           </section>
 
           <section className={styles.SignUpInfo}>
             <label htmlFor="email">email:</label>
             <input id="email" type="email" name="email" value={email} onChange={handleChange} />
 
+            <br></br>
 
             <label htmlFor="password">password:</label>
             <input id="password" type="password" name="password" value={password} onChange={handleChange} />
