@@ -24,8 +24,8 @@ const Login = () => {
 
 
   const handleChange = ({ target }) => {
-    if(target.name === 'email') setEmail(target.value);
-    if(target.name === 'password') setPassword(target.value);
+    if (target.name === 'email') setEmail(target.value);
+    if (target.name === 'password') setPassword(target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -38,11 +38,11 @@ const Login = () => {
   return (
     <div className={styles.homePage}>
 
-      
+
       <form onSubmit={handleSubmit}>
         <div className={styles.logIn}>
           <section className={styles.logInHeader}>
-            <p>Log In</p>
+            <p>LOG IN</p>
 
 
           </section>
@@ -60,7 +60,7 @@ const Login = () => {
               />
             </label>
 
-           
+
           </section>
 
           <section className={styles.logInButton}>
@@ -70,7 +70,7 @@ const Login = () => {
 
         </div>
       </form>
-      
+
     </div>
   );
 };
