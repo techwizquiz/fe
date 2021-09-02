@@ -22,7 +22,6 @@ export const SessionProvider = ({ children }) => {
       .finally(() => setLoading(false));
   }, []);
 
-
   const signup = async (email, password, avatar) => {
     const user = await postSignup(email, password, avatar);
     setSession(user);
