@@ -105,10 +105,11 @@
     height: 55px;
     width: 100px;
     margin-bottom: 20px;
+    border-radius: 25px;
 }
 
 .submitButton:hover {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    background: rgba(2,0,36,1);
     color:cyan;
     height: 55px;
     width: 100px;
