@@ -12,6 +12,17 @@
         border-color: cyan;
     }
 }
+
+@keyframes answerFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(720deg);
+    }
+}
+
 .answersPage {
     display: flex;
     flex-direction: row;
@@ -47,6 +58,9 @@
     width: 100px;
     margin-bottom: 50px;
     justify-content: center;
+   
+    animation: answerFlip 2s;
+    animation-iteration-count: 1;
 }
 
 .button {

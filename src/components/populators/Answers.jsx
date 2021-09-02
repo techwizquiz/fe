@@ -29,7 +29,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
 
     setRound('inactive');
 
-    alert(explanation);
+    // alert(explanation);
   };
   
 
@@ -39,6 +39,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
     }).then(setQuestions);
 
     setRound('active');
+    setWinLose('neutral');
   };
 
   return (
