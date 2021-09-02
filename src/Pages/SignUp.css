@@ -1,10 +1,51 @@
+@keyframes gradient {
+  0% {
+    background-position: 0% 40%;
+  }
+  50% {
+    background-position: 100% 40%;
+  }
+  100% {
+    background-position: 0% 40%;
+  }
+}
+
+p {
+  margin: 0rem;
+}
+
+h4 {
+  margin: .5rem;
+}
+
+@keyframes button-hover {
+  0% {
+      color: cyan;
+      border-color: cyan;
+  }
+  50% {
+      color: rgb(218, 45, 218);
+      border-color: rgb(218, 45, 218);
+  }
+  100% {
+      color: cyan;
+      border-color: cyan;
+  }
+}
+
+
 .SignUpPage {
   display: grid;
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 244, 200);
+  background: rgb(3,122,144);
+    background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
+    background-size: 150% 150%;
+    background-position: center;
+    animation: gradient 12s ease infinite;
 }
+
 
 .SignUp {
   display: flex;
@@ -15,20 +56,28 @@
   width: 100%;
   height: auto;
   align-items: center;
-  background-color: rgb(137, 170, 231);
+  background-color:black;
   padding-bottom: 1rem;
+  opacity: .9;
 }
 
 .Avatars {
   justify-content: space-evenly;
   padding-right: 20px;
+  margin-bottom: 1rem;
 }
 
 .SignUpHeader {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  font-size: x-large;
+  font-size: 300%;
+  background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 12s ease infinite;
+    background-size: 150% 150%;
+    font-family: 'Rampart One', cursive;
 }
 
 .SignUpInfo {
@@ -37,10 +86,8 @@
   justify-content: center;
   width: 50%;
   font-size: x-large;
-}
-
-.SignUpInfo input {
-  margin-bottom: 15px;
+  color: rgba(255,143,207,1);
+  margin-top: 1rem;
 }
 
 .SignUpButton {
@@ -58,8 +105,17 @@
   height: 55px;
   justify-content: center;
   align-items: center;
-  background-color: cornflowerblue;
+  background-color: rgb(18, 83, 223);
+  color: cyan;
   cursor: pointer;
+  border: rgb(104, 103, 103) 3px solid;
+}
+
+.submitButton:hover {
+  background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+  color:cyan;
+  border: cyan 3px solid;
+  animation: button-hover 5s infinite;
 }
 
 .noBorder {

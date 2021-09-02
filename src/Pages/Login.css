@@ -71,7 +71,6 @@
     background-size: 150% 150%;
     font-family: 'Rampart One', cursive;
     margin: 0rem;
-    
 }
 
 .logInInfo {
@@ -85,8 +84,6 @@
 .logInInfo label {
     display: flex;
     flex-direction: column;
-    
-    
     margin: 20px
 }
 
@@ -103,7 +100,7 @@
 }
 
 .submitButton {
-    background-color: rgba(2,0,36,1);
+    background-color: rgb(18, 83, 223);
     color:cyan;
     height: 55px;
     width: 100px;
