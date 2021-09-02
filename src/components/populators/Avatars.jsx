@@ -5,7 +5,7 @@ import monster from '../../../assets/png/004-monster.png';
 import youngWizard from '../../../assets/png/054-wizard.png';
 import goblin from '../../../assets/png/031-goblin.png';
 import skullWizard from '../../../assets/png/045-wizard.png';
-import octopus from '../../../assets/png/034-sea-monster.png';
+import chimera from '../../../assets/png/007-chimera.png';
 
 export const Avatars = ({ onChange }) => {
 
@@ -30,8 +30,8 @@ export const Avatars = ({ onChange }) => {
           <img className = {styles.img} src={skullWizard} />
         </label>
         <label className={styles.label}>
-          <input type="radio" name="avatar" value="octopus" className={styles.radioButton} onChange={onChange} />
-          <img className={styles.img} src={octopus} />
+          <input type="radio" name="avatar" value="chimera" className={styles.radioButton} onChange={onChange} />
+          <img className={styles.img} src={chimera} />
         </label>
       </div>
     </>
