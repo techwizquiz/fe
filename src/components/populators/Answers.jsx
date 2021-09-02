@@ -28,8 +28,6 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
     }
 
     setRound('inactive');
-
-    alert(explanation);
   };
   
 
@@ -56,7 +54,16 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
         <div className={styles.right}>
           
           <div className={winLose === 'neutral' ? styles.hidden : styles.rightWrongAvatar}>
-            {winLose === 'win' ? <h1>Correct</h1> : <h1>Incorrect</h1>}
+            {winLose === 'win' ? 
+              <>
+                <h1>Correct</h1> 
+                <pre>{explanation}</pre>
+              </> : 
+              <>
+                <h1>Incorrect</h1>
+                <pre>{explanation}</pre>
+              </>
+            }
             <img src={winLose === 'win' ? smilingWizard : grimReaper} />
           </div>
 
