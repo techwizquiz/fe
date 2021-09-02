@@ -87,7 +87,20 @@ const Submit = () => {
             <textarea name="question" onChange={handleChange} value={question} className={styles.question}></textarea>
           </div>
 
+          <div className={styles.fix}>
+            <label>Programming Language:</label>
+            <input name="language" onChange={handleChange} value={language}></input>
+          </div>
 
+          <div className={styles.fix}>
+            <label>Explanation:</label>
+            <input name="explanation" onChange={handleChange} value={explanation}></input>
+          </div>
+
+          <div className={styles.fix}>
+            <label>Level:</label>
+            <input name="level" onChange={handleChange} value={level}></input>
+          </div>
 
           <div className={styles.fix}>
             <label>Possible Answer:</label>
@@ -132,20 +145,9 @@ const Submit = () => {
             <input type="radio" id="d" name="correct" value="d" onChange={handleChange}></input>
           </div>
 
-          <div className={styles.fix}>
-            <label>Programming Language:</label>
-            <input name="language" onChange={handleChange} value={language}></input>
-          </div>
 
-          <div className={styles.fix}>
-            <label>Explanation:</label>
-            <input name="explanation" onChange={handleChange} value={explanation}></input>
-          </div>
 
-          <div className={styles.fix}>
-            <label>Level:</label>
-            <input name="level" onChange={handleChange} value={level}></input>
-          </div>
+
 
 
           <button>Submit</button>
