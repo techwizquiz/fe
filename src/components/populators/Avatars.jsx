@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import styles from './Avatars.css';
-import monster from '../../../assets/png/004-monster.png';
-import youngWizard from '../../../assets/png/054-wizard.png';
-import goblin from '../../../assets/png/031-goblin.png';
-import skullWizard from '../../../assets/png/045-wizard.png';
-import chimera from '../../../assets/png/007-chimera.png';
+import monster from '../../../public/assets/png/monster.png';
+import youngWizard from '../../../public/assets/png/youngWizard.png';
+import goblin from '../../../public/assets/png/goblin.png';
+import skullWizard from '../../../public/assets/png/skullWizard.png';
+import chimera from '../../../public/assets/png/chimera.png';
 
 export const Avatars = ({ onChange }) => {
 

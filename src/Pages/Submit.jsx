@@ -47,21 +47,21 @@ const Submit = () => {
   // };
 
   const handleChange = ({ target }) => {
-    if(target.name === 'question') setQuestion(target.value);
+    if (target.name === 'question') setQuestion(target.value);
     // if (target.name === 'correct') setAnswer(correctAnswer(choice));
-    if(target.name === 'question-title') setQuestionTitle(target.value);
-    if(target.name === 'possible-A') setChoiceA(target.value);
-    if(target.name === 'possible-B') setChoiceB(target.value);
-    if(target.name === 'possible-C') setChoiceC(target.value);
-    if(target.name === 'possible-D') setChoiceD(target.value);
-    if(target.name === 'language') setLanguage(target.value);
-    if(target.name === 'explanation') setExplanation(target.value);
-    if(target.name === 'level') setLevel(target.value);
+    if (target.name === 'question-title') setQuestionTitle(target.value);
+    if (target.name === 'possible-A') setChoiceA(target.value);
+    if (target.name === 'possible-B') setChoiceB(target.value);
+    if (target.name === 'possible-C') setChoiceC(target.value);
+    if (target.name === 'possible-D') setChoiceD(target.value);
+    if (target.name === 'language') setLanguage(target.value);
+    if (target.name === 'explanation') setExplanation(target.value);
+    if (target.name === 'level') setLevel(target.value);
 
-    if(target.id === 'a') setAnswer(target.value);
-    if(target.id === 'b') setAnswer(target.value);
-    if(target.id === 'c') setAnswer(target.value);
-    if(target.id === 'd') setAnswer(target.value);
+    if (target.id === 'a') setAnswer(target.value);
+    if (target.id === 'b') setAnswer(target.value);
+    if (target.id === 'c') setAnswer(target.value);
+    if (target.id === 'd') setAnswer(target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -77,14 +77,29 @@ const Submit = () => {
       <form onSubmit={handleSubmit}>
         <div className={styles.submit}>
 
-          <div className={styles.fix}>
+          <div className={styles.questionTitle}>
+            <label>Question Title:</label>
+            <input name="question-title" onChange={handleChange} value={questionTitle} className={styles.questionTitle}></input>
+          </div>
+
+          <div className={styles.question}>
             <label>Question:</label>
-            <input name="question" onChange={handleChange} value={question} className={styles.question}></input>
+            <textarea name="question" onChange={handleChange} value={question} className={styles.question}></textarea>
           </div>
 
           <div className={styles.fix}>
-            <label>Question Title:</label>
-            <input name="question-title" onChange={handleChange} value={questionTitle} className={styles.question}></input>
+            <label>Programming Language:</label>
+            <input name="language" onChange={handleChange} value={language}></input>
+          </div>
+
+          <div className={styles.fix}>
+            <label>Explanation:</label>
+            <input name="explanation" onChange={handleChange} value={explanation}></input>
+          </div>
+
+          <div className={styles.fix}>
+            <label>Level:</label>
+            <input name="level" onChange={handleChange} value={level}></input>
           </div>
 
           <div className={styles.fix}>
@@ -130,20 +145,9 @@ const Submit = () => {
             <input type="radio" id="d" name="correct" value="d" onChange={handleChange}></input>
           </div>
 
-          <div className={styles.fix}>
-            <label>Programming Language:</label>
-            <input name="language" onChange={handleChange} value={language}></input>
-          </div>
 
-          <div className={styles.fix}>
-            <label>Explanation:</label>
-            <input name="explanation" onChange={handleChange} value={explanation}></input>
-          </div>
 
-          <div className={styles.fix}>
-            <label>Level:</label>
-            <input name="level" onChange={handleChange} value={level}></input>
-          </div>
+
 
 
           <button>Submit</button>
