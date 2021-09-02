@@ -11,13 +11,16 @@ import { useSetQuestions } from './QuestionProvider';
 
 const Answers = ({ a, b, c, d, answer, explanation }) => {
   const setQuestions = useSetQuestions();
-  const [selectedChoice, setSelectedChoice] = useState();
+  const [selectedChoice, setSelectedChoice] = useState('');
   const { winLose, setWinLose } = useSetWinLose('neutral');
   const { correct, setCorrect } = useSetCorrect(correct);
   const { incorrect, setIncorrect } = useSetIncorrect(incorrect);
   const [round, setRound] = useState('active');
 
   const choice = () => {
+    if(selectedChoice === '') {
+      return;
+    }
  
     if(selectedChoice === answer) {
       setWinLose('win');
@@ -28,8 +31,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
     }
 
     setRound('inactive');
-
-    // alert(explanation);
+    setSelectedChoice('');
   };
   
 
@@ -45,6 +47,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
   return (
     <>
       <div className={styles.answersPage}>
+        
         <div className={styles.left}>
           <label><button className={styles.button} type="radio" name="answer" value="a" onClick={({ target }) => setSelectedChoice(target.value)} key={a}>A: <pre className={styles.pre}>{a}</pre></button></label>
 
@@ -54,10 +57,19 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
 
           <label><button className={styles.button} type="radio" name="answer" value="d" onClick={({ target }) => setSelectedChoice(target.value)} key={d}>D: <pre className={styles.pre}>{d}</pre></button></label>
         </div>
-        <div className={styles.right}>
-          
+        
+        <div className={styles.middle}>
           <div className={winLose === 'neutral' ? styles.hidden : styles.rightWrongAvatar}>
-            {winLose === 'win' ? <h1>Correct</h1> : <h1>Incorrect</h1>}
+            {winLose === 'win' ? 
+              <>
+                <h1>Correct</h1> 
+                
+              </> : 
+              <>
+                <h1>Incorrect</h1>
+                
+              </>
+            }
             <img src={winLose === 'win' ? smilingWizard : grimReaper} />
           </div>
 
@@ -68,6 +80,9 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
             <p>correct: {correct}</p>
             <p>incorrect: {incorrect}</p>
           </div>
+        </div>
+        <div className={winLose === 'neutral' ? styles.hidden : styles.right}>
+          <p className={styles.explanation}>{explanation}</p>
         </div>
 
       </div>

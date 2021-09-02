@@ -4,8 +4,6 @@ import { Redirect, Route, useHistory } from 'react-router-dom';
 import { fetchVerify, postLogin, postSignup } from './auth';
 const SessionContext = createContext();
 
-
-
 export const SessionProvider = ({ children }) => {
   const history = useHistory();
 
@@ -21,7 +19,6 @@ export const SessionProvider = ({ children }) => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, []);
-
 
   const signup = async (email, password, avatar) => {
     const user = await postSignup(email, password, avatar);
@@ -44,9 +41,9 @@ export const SessionProvider = ({ children }) => {
 export const PrivateRoute = (props) => {
   const session = useSession();
   const loading = useAuthLoading();
-
-  if(loading) return <h1>Loading....THIS SHOULD BE A SPINNER!!!</h1>;
-  if(!session && !loading) return <Redirect to="/login" />;
+  console.log('s', session);
+  if (loading) return <h1>Loading....THIS SHOULD BE A SPINNER!!!</h1>;
+  if (!session && !loading) return <Redirect to="/login" />;
 
   return <Route {...props} />;
 };
@@ -80,6 +77,8 @@ export const useSetCorrect = () => {
   const { correct, setCorrect } = useContext(SessionContext);
   return { correct, setCorrect };
 };
+
+//this is my comment
 
 export const useSetIncorrect = () => {
   const { incorrect, setIncorrect } = useContext(SessionContext);

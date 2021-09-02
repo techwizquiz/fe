@@ -40,11 +40,34 @@
     word-wrap: break-word;
 }
 
-.right {
+.middle {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.right {
+    display: flex;
+    z-index: 0;
+}
+
+.explanation {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-wrap: normal;
+    min-width: 250px;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 550px;
+    overflow: auto;
+    z-index: 2;
+    border: rgb(104, 103, 103) 3px solid;
+    background-color: black;
+    color: cyan;
+    font-size: 140%;
+    border-radius: 3%;
+    margin-left: 30px;
 }
 
 .hidden {
@@ -77,8 +100,8 @@
 
 .button:hover {
     cursor: pointer;
-    height: 120px;
-    width: 500px;
+    min-height: 120px;
+    min-width: 500px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
@@ -89,8 +112,8 @@
 }
 
 .button:focus {
-    height: 120px;
-    width: 500px;
+    min-height: 120px;
+    min-width: 500px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
@@ -101,8 +124,8 @@
 
 .button:active {
     cursor: pointer;
-    height: 120px;
-    width: 500px;
+    min-height: 120px;
+    min-width: 500px;
     background-color: rgb(137, 170, 231);
     transform: translateY(6px);
     box-shadow: 0 6px darkblue;
@@ -206,6 +229,11 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
  .scores {
      display: flex;
      flex-direction: column;
+     max-height: 70px;
+     min-width: 100px;
      background: black;
      color: cyan;
+     justify-content: space-between;
+     border: rgb(104, 103, 103) 3px solid;
+    font-size: 135%;
  }

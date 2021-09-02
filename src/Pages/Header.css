@@ -30,3 +30,8 @@
 .link {
     color:cyan;
 }
+
+img {
+    height: 100px;
+    width: auto;
+}

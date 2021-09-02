@@ -1,27 +1,30 @@
-@keyframes zoom-in-out {
+@keyframes gradient {
     0% {
-        background-size: 100%;
+      background-position: 0% 40%;
     }
     50% {
-        background-size: 180%;
+      background-position: 100% 40%;
     }
     100% {
-        background-size: 100%;
+      background-position: 0% 40%;
     }
-}
+  }
 
 @keyframes button-hover {
     0% {
         color: cyan;
         border-color: cyan;
+        font-weight: bolder;
     }
     50% {
         color: magenta;
         border-color: magenta;
+        font-weight: bolder;
     }
     100% {
         color: cyan;
         border-color: cyan;
+        font-weight: bolder;
     }
 }
 
@@ -30,10 +33,11 @@
     display: flex;
     height: 100vh;
     width: 100%;
-    background: rgb(0,212,255);
-    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(2,0,36,1) 67%);
+    background: rgb(3,122,144);
+    background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
+    background-size: 150% 150%;
     background-position: center;
-   animation: zoom-in-out 5s infinite;
+    animation: gradient 12s ease infinite;
 }
 
 
@@ -125,16 +129,20 @@
 .quizButtons button {
     height: 125px;
     width: 350px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    background-color: black;
     color: cyan;
     font-size: 175%;
     border: none;
     cursor: pointer;
+    border-radius: 25px;
+    opacity: .8;
+    font-family: 'Rampart One', cursive;
+    border: rgb(104, 103, 103) 3px solid;
 }
 .quizButtons button:hover {
     height: 125px;
     width: 350px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    background: rgba(2,0,36,1);
     color: cyan;
     font-size: 175%;
     border: cyan 3px solid;

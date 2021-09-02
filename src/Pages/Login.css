@@ -1,14 +1,14 @@
-@keyframes zoom-in-out {
+@keyframes gradient {
     0% {
-        background-size: 100%;
+      background-position: 0% 40%;
     }
     50% {
-        background-size: 180%;
+      background-position: 100% 40%;
     }
     100% {
-        background-size: 100%;
+      background-position: 0% 40%;
     }
-}
+  }
 
 @keyframes button-hover {
     0% {
@@ -16,8 +16,8 @@
         border-color: cyan;
     }
     50% {
-        color: magenta;
-        border-color: magenta;
+        color: rgb(218, 45, 218);
+        border-color: rgb(218, 45, 218);
     }
     100% {
         color: cyan;
@@ -34,23 +34,25 @@
     align-items: center;
     justify-items: center;
     justify-content: center;
-    background: rgb(0,212,255);
-    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(2,0,36,1) 67%);
+    background: rgb(3,122,144);
+    background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
+    background-size: 150% 150%;
     background-position: center;
-   animation: zoom-in-out 5s infinite;
+    animation: gradient 12s ease infinite;
 }
 
 .logIn {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     background-color: black;
     height: 120%;
     width:150%;
-    color:cyan;
+    color:rgba(255,143,207,1);
     font-size: 125%;
     border-radius: 15%;
+    opacity: .8;
 }
 
 .logInHeader {
@@ -60,9 +62,15 @@
 }
 
 .logIn p {
-    font-size: 165%;
-    display: flex;
-   
+    font-size: 300%;
+    /* display: flex; */
+    background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 12s ease infinite;
+    background-size: 150% 150%;
+    font-family: 'Rampart One', cursive;
+    margin: 0rem;
 }
 
 .logInInfo {
@@ -76,8 +84,6 @@
 .logInInfo label {
     display: flex;
     flex-direction: column;
-    
-    
     margin: 20px
 }
 
@@ -90,18 +96,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 .submitButton {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    background-color: rgb(18, 83, 223);
     color:cyan;
     height: 55px;
     width: 100px;
     margin-bottom: 20px;
+    border-radius: 25px;
 }
 
 .submitButton:hover {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
+    background: rgba(2,0,36,1);
     color:cyan;
     height: 55px;
     width: 100px;
