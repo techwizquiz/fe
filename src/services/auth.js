@@ -8,4 +8,7 @@ export const postLogin = (email, password) => {
   return post('/api/v1/auth/login', { email, password });
 };
 
-export const fetchVerify = () => get('/api/v1/auth/verify');
+export const fetchVerify = () => {
+  console.log('get', get('/api/v1/auth/verify'));
+  return get('/api/v1/auth/verify');
+};
