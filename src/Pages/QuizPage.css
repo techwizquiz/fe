@@ -140,7 +140,7 @@
     
 }
 
-.questionLIst {
+.questionList {
     display: inline-flex;
     flex-wrap: wrap;
     word-wrap: break-word;

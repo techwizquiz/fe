@@ -3,13 +3,13 @@ const request = async (path, method, body) => {
     method,
     headers: body
       ? {
-        'Content-Type': 'application/ json',
+        'Content-Type': 'application/json',
       }
-      : null,
-    body: JSON.stringify(body),
-    credentials: 'include',
+      : {},
+    body: body ? JSON.stringify(body) : null,
+    credentials: 'include', // store cookies in the cookie jar
   });
-
+  if(!res.ok) throw await res.json();
   return res.json();
 };
 
