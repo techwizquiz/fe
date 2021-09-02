@@ -4,8 +4,6 @@ import { Redirect, Route, useHistory } from 'react-router-dom';
 import { fetchVerify, postLogin, postSignup } from './auth';
 const SessionContext = createContext();
 
-
-
 export const SessionProvider = ({ children }) => {
   const history = useHistory();
 
@@ -43,7 +41,7 @@ export const SessionProvider = ({ children }) => {
 export const PrivateRoute = (props) => {
   const session = useSession();
   const loading = useAuthLoading();
-
+  console.log('s', session);
   if(loading) return <h1>Loading....THIS SHOULD BE A SPINNER!!!</h1>;
   if(!session && !loading) return <Redirect to="/login" />;
 

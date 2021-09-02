@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSession } from '../services/SessionProvider.jsx';
+import { useAuthLoading, useSession } from '../services/SessionProvider.jsx';
 import styles from './Header.css';
 import monster from '../../assets/png/004-monster.png';
 import youngWizard from '../../assets/png/054-wizard.png';
@@ -10,9 +10,15 @@ import octopus from '../../assets/png/034-sea-monster.png';
 
 const Header = () => {
   const user = useSession();
+  const loading = useAuthLoading();
+
+
+  if(loading) return (
+    <h1>...Loading</h1>
+  );
 
   console.log('user', user);
-
+  
   return (
     <div className={styles.header}>
       <div className={styles.headerTitle}>
@@ -21,7 +27,7 @@ const Header = () => {
 
       {user ? 
         <div>
-          <img src={user.avatar}></img>
+          <img src={user?.avatar}></img>
         </div> :
         null
       }
