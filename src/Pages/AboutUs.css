@@ -33,7 +33,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     width: 100%;
     background: rgb(3,122,144);
     background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
@@ -56,14 +55,15 @@ font-size: 150%;
     margin: .1rem;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 30px;
 }
 
 .person {
     display: flex;
     flex-direction: column;
-    margin-left: 75px;
-    margin-right: 75px;
-    max-width: 190px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 215px;
     align-items: center;
     background: silver;
     border: silver 10px solid;
@@ -89,6 +89,9 @@ font-size: 150%;
 .description {
     padding-left: 20px;
     padding-right: 20px;
+    justify-items: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .img {
