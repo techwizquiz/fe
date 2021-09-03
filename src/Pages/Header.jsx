@@ -6,35 +6,24 @@ import styles from './Header.css';
 
 const Header = () => {
 
-  const user = useSession();
+  const session = useSession();
   const loading = useAuthLoading();
 
-  if(loading && !user) return (
+  console.dir('header user 1', session);
+
+  if(loading && !session) return (
     <h1>...Loading</h1>
   );
 
-  if(user && !user?.user?.avatar) return (
-    <div className={styles.header}>
-      <div className={styles.headerTitle}>
-        <p>Tech Wiz Quiz</p>        
-      </div>
+  let imgSrc;
 
-      {user ? 
-        <div>
-          <img src={`../assets/png/${user.avatar}.png`}></img>
-        </div> :
-        null
-      } 
+  if(session && !session?.user?.avatar) {
+    imgSrc = session.avatar;
+  } else {
+    imgSrc = session?.user?.avatar;
+  }
 
-      <div className={styles.headerNavLinks}>
-        <Link className={styles.link} to="/home/">
-          <p>Home</p>
-        </Link>
-      </div>
-    </div>
-  );
-
-  console.log('header user', user);
+  console.log('header user 2', session);
 
   return (
     <div className={styles.header}>
@@ -42,9 +31,9 @@ const Header = () => {
         <p>Tech Wiz Quiz</p>        
       </div>
 
-      {user ? 
+      {session ? 
         <div>
-          <img src={`../assets/png/${user?.user?.avatar}.png`}></img>
+          <img src={`../assets/png/${imgSrc}.png`}></img>
         </div> :
         null
       } 
