@@ -15,7 +15,9 @@ const Home = () => {
           <Link to="/submit">
             <button>Submit a Question</button>
           </Link>
-          <button>View Questions</button>
+          <Link to="/aboutus">
+            <button>About Us</button>
+          </Link>
         </div>
       </div>
     </div>
