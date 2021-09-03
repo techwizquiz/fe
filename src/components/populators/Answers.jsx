@@ -42,6 +42,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
 
     setRound('active');
     setWinLose('neutral');
+    setSelectedChoice('');
   };
 
   return (
@@ -49,13 +50,29 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
       <div className={styles.answersPage}>
         
         <div className={styles.left}>
-          <label><button className={styles.button} type="radio" name="answer" value="a" onClick={({ target }) => setSelectedChoice(target.value)} key={a}>A: <pre className={styles.pre}>{a}</pre></button></label>
+          <label>
+            <button className={styles.button} type="radio" name="answer" value="a" onClick={({ target }) => setSelectedChoice(target.value)} key={a}>
+              A: <pre className={styles.pre}>{a}</pre>
+            </button>
+          </label>
 
-          <label><button className={styles.button} type="radio" name="answer" value="b" onClick={({ target }) => setSelectedChoice(target.value)} key={b}>B: <pre className={styles.pre}>{b}</pre></button></label>
+          <label>
+            <button className={styles.button} type="radio" name="answer" value="b" onClick={({ target }) => setSelectedChoice(target.value)} key={b}>
+              B: <pre className={styles.pre}>{b}</pre>
+            </button>
+          </label>
 
-          <label><button className={styles.button} type="radio" name="answer" value="c" onClick={({ target }) => setSelectedChoice(target.value)} key={c}>C: <pre className={styles.pre}>{c}</pre></button></label>
+          <label>
+            <button className={styles.button} type="radio" name="answer" value="c" onClick={({ target }) => setSelectedChoice(target.value)} key={c}>
+              C: <pre className={styles.pre}>{c}</pre>
+            </button>
+          </label>
 
-          <label><button className={styles.button} type="radio" name="answer" value="d" onClick={({ target }) => setSelectedChoice(target.value)} key={d}>D: <pre className={styles.pre}>{d}</pre></button></label>
+          <label>
+            <button className={styles.button} type="radio" name="answer" value="d" onClick={({ target }) => setSelectedChoice(target.value)} key={d}>
+              D: <pre className={styles.pre}>{d}</pre>
+            </button>
+          </label>
         </div>
         
         <div className={styles.middle}>
@@ -73,7 +90,16 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
             <img src={winLose === 'win' ? smilingWizard : grimReaper} />
           </div>
 
-          <button onClick={choice} className={round === 'active' ? styles.submitButton : styles.disabledButton}>Submit<br></br>{selectedChoice.toUpperCase()}</button>
+          <button onClick={choice} className={round === 'active' ? styles.submitButton : styles.disabledButton}>
+            {
+              round === 'active' ? 
+                <>
+            Submit<br></br>{selectedChoice.toUpperCase()}
+                </> : 
+                <> <p>The answer is:</p> {answer.toString().toUpperCase()}
+                </>
+            }
+          </button>
 
           <button className={styles.nextQuestion} onClick={handleNewQuestion} id="submitButton">Next Question</button>
           <div className={styles.scores}>

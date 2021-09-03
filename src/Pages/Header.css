@@ -13,14 +13,15 @@
     align-items: center;
     color: cyan;
     font-size: 330%;
-
+    font-family: 'Rampart One', cursive;
 }
 
 .headerNavLinks {
     display: flex;
     align-items: center;
     color: cyan;
-    font-size: 130%;
+    font-size: 170%;
+    font-family: 'Rampart One', cursive;
 }
 
 .headerNavLinks p {

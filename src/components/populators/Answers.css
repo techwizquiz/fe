@@ -90,6 +90,7 @@
     cursor: pointer;
     min-height: 120px;
     min-width: 500px;
+    border-radius: 25px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
@@ -102,6 +103,7 @@
     cursor: pointer;
     min-height: 120px;
     min-width: 500px;
+    border-radius: 25px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
@@ -114,6 +116,7 @@
 .button:focus {
     min-height: 120px;
     min-width: 500px;
+    border-radius: 25px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
@@ -126,6 +129,7 @@
     cursor: pointer;
     min-height: 120px;
     min-width: 500px;
+    border-radius: 25px;
     background-color: rgb(137, 170, 231);
     transform: translateY(6px);
     box-shadow: 0 6px darkblue;
@@ -200,40 +204,46 @@ background: linear-gradient(90deg, rgb(177, 5, 5) 96%, rgba(255,253,253,1) 99%, 
 
 .nextQuestion {
     cursor: pointer;
-    height: 70px;
-    width: 100px;
+    height: 80px;
+    width: 120px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
     box-shadow: 0 10px rgb(7, 7, 112);
-    margin: 20px
+    margin: 20px;
+    border-radius: 25px;
  }
  .nextQuestion:hover {
     cursor: pointer;
-    height: 70px;
-    width: 100px;
+    height: 80px;
+    width: 120px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%, rgba(255,253,253,1) 99%, rgba(2,0,36,1) 100%);
     color: cyan;
     font-size: 135%;
     box-shadow: 0 10px rgb(7, 7, 112);
     animation: button-hover 5s infinite;
+    border-radius: 25px;
  }
 
  .nextQuestion:active {
     background: linear-gradient(90deg, rgba(2,0,36,1) 96%,  rgba(2,0,36,1) 100%);
-
+    border-radius: 25px;
     box-shadow: 0 5px black;
     transform: translateY(6px);
+    height: 80px;
+    width: 120px;
  }
 
  .scores {
      display: flex;
      flex-direction: column;
-     max-height: 70px;
-     min-width: 100px;
+     height: 90px;
+     width: 140px;
      background: black;
      color: cyan;
-     justify-content: space-between;
+     align-items: center;
+     justify-content: space-around;
      border: rgb(104, 103, 103) 3px solid;
     font-size: 135%;
+    border-radius: 25px;
  }

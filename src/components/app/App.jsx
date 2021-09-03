@@ -6,6 +6,7 @@ import AboutUs from '../../Pages/AboutUs';
 import Submit from '../../Pages/Submit';
 import QuizPage from '../../Pages/QuizPage';
 import SignUpPage from '../../Pages/SignUp';
+import ViewQuestions from '../../Pages/ViewQuestions';
 
 
 import { QuestionProvider } from '../populators/QuestionProvider';
@@ -63,7 +64,6 @@ const App = () => {
           />
          
         </QuestionProvider>
-
 
         <Redirect to="/" />
 
