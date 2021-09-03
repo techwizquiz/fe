@@ -92,9 +92,11 @@ h4 {
 
 .SignUpButton {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
   height: 100%;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
 .submitButton {
@@ -110,6 +112,7 @@ h4 {
   cursor: pointer;
   border: rgb(104, 103, 103) 3px solid;
   border-radius: 25px;
+  font-size: large;
 }
 
 .submitButton:hover {
@@ -136,4 +139,8 @@ h4 {
   padding-right: 1rem;
   padding-bottom: .5rem;
   padding-top: 4rem;
+}
+
+.link {
+  color: cyan;
 }
