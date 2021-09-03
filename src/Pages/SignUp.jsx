@@ -1,40 +1,30 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import styles from './SignUp.css';
 import { Avatars } from '../components/populators/Avatars';
+import { useSignup } from '../services/SessionProvider';
 
 const SignUpPage = () => {
 
-  const history = useHistory();
+  // const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [avatar, setAvatar] = useState('');
 
-  const signUp = async (email, password, avatar) => {
-    const res = await fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password, avatar }),
-      credentials: 'include',
-    });
-    return res.json();
-  };
+  const signUp = useSignup();
 
   const handleChange = ({ target }) => {
-    if (target.name === 'email') setEmail(target.value);
-    if (target.name === 'password') setPassword(target.value);
-    if (target.name === 'avatar') setAvatar(target.value);
+    if(target.name === 'email') setEmail(target.value);
+    if(target.name === 'password') setPassword(target.value);
+    if(target.name === 'avatar') setAvatar(target.value);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    signUp(email, password, avatar).then(() => history.push('/home'));
-
+    signUp(email, password, avatar);
   };
-
 
   return (
     <div className={styles.SignUpPage}>
@@ -62,6 +52,7 @@ const SignUpPage = () => {
 
           <section className={styles.SignUpButton}>
             <button className={styles.submitButton}>Submit</button>
+            <Link className={styles.link} to="/login">Already have an account? Log in</Link>
           </section>
 
         </div>

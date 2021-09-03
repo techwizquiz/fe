@@ -1,21 +1,29 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthLoading, useSession } from '../services/SessionProvider.jsx';
 import styles from './Header.css';
-// import monster from '../../assets/png/monster.png';
-// import youngWizard from '../../assets/png/youngWizard.png';
-// import goblin from '../../assets/png/goblin.png';
-// import skullWizard from '../../assets/png/skullWizard.png';
-// import chimera from '../../assets/png/chimera.png';
 
 const Header = () => {
-  const user = useSession();
+
+  const session = useSession();
   const loading = useAuthLoading();
 
+  console.dir('header user 1', session);
 
-  if (loading) return (
+  if (loading && !session) return (
     <h1>...Loading</h1>
   );
+
+  let imgSrc;
+
+  if (session && !session?.user?.avatar) {
+    imgSrc = session.avatar;
+  } else {
+    imgSrc = session?.user?.avatar;
+  }
+
+  console.log('header user 2', session);
 
   return (
     <div className={styles.header}>
@@ -23,9 +31,9 @@ const Header = () => {
         <p>Tech Wiz Quiz</p>
       </div>
 
-      {user ?
-        <div className={styles.icon}>
-          <img src={`../assets/png/${user?.user.avatar}.png`}></img>
+      {session ?
+        <div>
+          <img src={`../assets/png/${imgSrc}.png`}></img>
         </div> :
         null
       }
@@ -34,10 +42,10 @@ const Header = () => {
         <Link className={styles.link} to="/home/">
           <p>Home</p>
         </Link>
-        <p>Log Out</p>
       </div>
 
     </div>
   );
+
 };
 export default Header;
