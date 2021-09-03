@@ -32,7 +32,7 @@ const Header = () => {
       </div>
 
       {session ?
-        <div>
+        <div className={styles.icon}>
           <img src={`../assets/png/${imgSrc}.png`}></img>
         </div> :
         null
