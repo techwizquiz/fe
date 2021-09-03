@@ -9,7 +9,7 @@ const Header = () => {
   const session = useSession();
   const loading = useAuthLoading();
 
-  console.dir('header user 1', session);
+ 
 
   if (loading && !session) return (
     <h1>...Loading</h1>
@@ -23,7 +23,7 @@ const Header = () => {
     imgSrc = session?.user?.avatar;
   }
 
-  console.log('header user 2', session);
+  
 
   return (
     <div className={styles.header}>

@@ -30,7 +30,7 @@ const Submit = () => {
       body: JSON.stringify({ level, questionTitle, questionText: question, answer, a: choiceA, b: choiceB, c: choiceC, d: choiceD, explanation, language })
 
     });
-    console.log(res);
+    
     return res.json();
   };
 
@@ -67,7 +67,6 @@ const Submit = () => {
   const handleSubmit = async (event) => {
 
     event.preventDefault();
-    console.log(level, questionTitle, question, answer, choiceA, choiceB, choiceC, choiceD, explanation, language);
     submitQuestion(level, questionTitle, question, answer, choiceA, choiceB, choiceC, choiceD, explanation, language).then(() => history.push('/home'));
   };
 

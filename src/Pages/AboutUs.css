@@ -12,25 +12,27 @@
 
 @keyframes button-hover {
     0% {
-        color: cyan;
+        
         border-color: cyan;
-        font-weight: bolder;
+        
     }
     50% {
-        color: magenta;
+        
         border-color: magenta;
-        font-weight: bolder;
+        
     }
     100% {
-        color: cyan;
+        
         border-color: cyan;
-        font-weight: bolder;
+        
     }
 }
 
 
 .aboutUs {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100vh;
     width: 100%;
     background: rgb(3,122,144);
@@ -38,7 +40,7 @@
     background-size: 150% 150%;
     background-position: center;
     animation: gradient 12s ease infinite;
-    justify-content: center;
+    justify-content: baseline;
 }
 
 .title {
@@ -52,17 +54,44 @@ font-size: 150%;
     flex-direction:row;
     align-items: center;
     margin: .1rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    margin-left: 75px;
+    margin-right: 75px;
+    max-width: 190px;
+    align-items: center;
+    background: silver;
+    border: silver 10px solid;
+    border-radius: 25px;;
+    color: black;
+    justify-content: space-between;
+    animation: button-hover 5s infinite;
 }
 
 .header {
     display: flex;
     flex-direction: row;
     height: 100px;
-    background-color: black;
+    font-size: 500%;
     opacity: .8;
-    color:rgba(255,143,207,1);
+    color: black;
     position: sticky;
     font-family: 'Rampart One', cursive;
    
     justify-content: center;
+}
+
+.description {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.img {
+    height: 150px;
+    width: 150px;
 }

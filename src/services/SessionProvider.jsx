@@ -98,7 +98,7 @@ export const PrivateRoute = (props) => {
   const loading = useAuthLoading();
   if(loading) return <h1>...Loading</h1>;
   if(!session && !loading) return <Redirect to="/login" />;
-  console.log(session);
+  
   return <Route {...props} />;
 };
 
