@@ -1,21 +1,28 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthLoading, useSession } from '../services/SessionProvider.jsx';
 import styles from './Header.css';
-// import monster from '../../assets/png/monster.png';
-// import youngWizard from '../../assets/png/youngWizard.png';
-// import goblin from '../../assets/png/goblin.png';
-// import skullWizard from '../../assets/png/skullWizard.png';
-// import chimera from '../../assets/png/chimera.png';
 
 const Header = () => {
+
   const user = useSession();
   const loading = useAuthLoading();
 
-
-  if(loading) return (
+  if(loading && !user) return (
     <h1>...Loading</h1>
   );
+
+  console.log('header user', user);
+
+  // const logOut = useLogout();
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault;
+  //   logOut();
+  // };
+
+  // const avatarRef = React.useRef();
 
   return (
     <div className={styles.header}>
@@ -25,7 +32,8 @@ const Header = () => {
 
       {user ? 
         <div>
-          <img src={`../assets/png/${user?.user.avatar}.png`}></img>
+          <img src={`../assets/png/${user?.user?.avatar}.png`}></img>
+          {/* <img ref={avatarRef} src={`../assets/png/${user?.user?.avatar}.png`}></img> */}
         </div> :
         null
       } 
@@ -34,10 +42,17 @@ const Header = () => {
         <Link className={styles.link} to="/home/">
           <p>Home</p>
         </Link>
-        <p>Log Out</p>
+        {/* {user ? 
+          <form onSubmit={handleSubmit}>
+            <button>Log out</button>
+          </form> :
+          null
+        } */}
+
       </div>
 
     </div>
   );
+  
 };
 export default Header;

@@ -6,10 +6,8 @@ import AboutUs from '../../Pages/AboutUs';
 import Submit from '../../Pages/Submit';
 import QuizPage from '../../Pages/QuizPage';
 import SignUpPage from '../../Pages/SignUp';
-
-
+import { PrivateRoute } from '../../services/SessionProvider';
 import { QuestionProvider } from '../populators/QuestionProvider';
-
 
 import {
   Route,
@@ -19,58 +17,45 @@ import {
 
 
 const App = () => {
-
-
-
   return (
     <>
       <Header />
-
       <Switch>
-
         <Route path="/" exact={true}
           render={routerProps => (
             <Login {...routerProps} />
           )}
         />
-
-        <Route path="/home/" exact={true}
+        <Route path="/login/" exact={true}
+          render={routerProps => (
+            <Login {...routerProps} />
+          )}
+        />
+        <PrivateRoute path="/home/" exact={true}
           render={routerProps => (
             <Home {...routerProps} />
           )}
         />
-
         <Route path="/signup/" exact={true}
           render={routerProps => (
             <SignUpPage {...routerProps} />
           )}
         />
-
-
         <Route path="/submit/" exact={true}
           render={routerProps => (
             <Submit {...routerProps} />
           )}
         />
-
         <QuestionProvider>
-         
-
-          <Route path="/quiz/" exact={true}
+          <PrivateRoute path="/quiz/" exact={true}
             render={routerProps => (
               <QuizPage {...routerProps} />
             )}
           />
-         
         </QuestionProvider>
-
-
         <Redirect to="/" />
-
       </Switch>
-
       <AboutUs />
-
     </>
   );
 };
