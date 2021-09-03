@@ -11,13 +11,13 @@ const Header = () => {
 
   console.dir('header user 1', session);
 
-  if(loading && !session) return (
+  if (loading && !session) return (
     <h1>...Loading</h1>
   );
 
   let imgSrc;
 
-  if(session && !session?.user?.avatar) {
+  if (session && !session?.user?.avatar) {
     imgSrc = session.avatar;
   } else {
     imgSrc = session?.user?.avatar;
@@ -28,15 +28,15 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerTitle}>
-        <p>Tech Wiz Quiz</p>        
+        <p>Tech Wiz Quiz</p>
       </div>
 
-      {session ? 
+      {session ?
         <div>
           <img src={`../assets/png/${imgSrc}.png`}></img>
         </div> :
         null
-      } 
+      }
 
       <div className={styles.headerNavLinks}>
         <Link className={styles.link} to="/home/">
@@ -46,6 +46,6 @@ const Header = () => {
 
     </div>
   );
-  
+
 };
 export default Header;
