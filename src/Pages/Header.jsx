@@ -13,16 +13,28 @@ const Header = () => {
     <h1>...Loading</h1>
   );
 
+  if(user && !user?.user?.avatar) return (
+    <div className={styles.header}>
+      <div className={styles.headerTitle}>
+        <p>Tech Wiz Quiz</p>        
+      </div>
+
+      {user ? 
+        <div>
+          <img src={`../assets/png/${user.avatar}.png`}></img>
+        </div> :
+        null
+      } 
+
+      <div className={styles.headerNavLinks}>
+        <Link className={styles.link} to="/home/">
+          <p>Home</p>
+        </Link>
+      </div>
+    </div>
+  );
+
   console.log('header user', user);
-
-  // const logOut = useLogout();
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault;
-  //   logOut();
-  // };
-
-  // const avatarRef = React.useRef();
 
   return (
     <div className={styles.header}>
@@ -33,7 +45,6 @@ const Header = () => {
       {user ? 
         <div>
           <img src={`../assets/png/${user?.user?.avatar}.png`}></img>
-          {/* <img ref={avatarRef} src={`../assets/png/${user?.user?.avatar}.png`}></img> */}
         </div> :
         null
       } 
@@ -42,13 +53,6 @@ const Header = () => {
         <Link className={styles.link} to="/home/">
           <p>Home</p>
         </Link>
-        {/* {user ? 
-          <form onSubmit={handleSubmit}>
-            <button>Log out</button>
-          </form> :
-          null
-        } */}
-
       </div>
 
     </div>

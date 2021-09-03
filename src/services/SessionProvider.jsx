@@ -88,8 +88,6 @@ export const useSetCorrect = () => {
   return { correct, setCorrect };
 };
 
-//this is my comment
-
 export const useSetIncorrect = () => {
   const { incorrect, setIncorrect } = useContext(SessionContext);
   return { incorrect, setIncorrect };
