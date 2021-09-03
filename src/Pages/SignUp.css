@@ -129,7 +129,7 @@ h4 {
 
 .footer {
   flex: 0 0 auto;
-  max-width: 67.5rem;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;

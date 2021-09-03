@@ -48,7 +48,6 @@
     align-items: center;
     background-color: black;
     height: 120%;
-    width:150%;
     color:rgba(255,143,207,1);
     font-size: 125%;
     border-radius: 15%;
@@ -59,6 +58,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .logIn p {

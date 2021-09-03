@@ -13,22 +13,22 @@ const Header = () => {
   const loading = useAuthLoading();
 
 
-  if(loading) return (
+  if (loading) return (
     <h1>...Loading</h1>
   );
 
   return (
     <div className={styles.header}>
       <div className={styles.headerTitle}>
-        <p>Tech Wiz Quiz</p>        
+        <p>Tech Wiz Quiz</p>
       </div>
 
-      {user ? 
-        <div>
+      {user ?
+        <div className={styles.icon}>
           <img src={`../assets/png/${user?.user.avatar}.png`}></img>
         </div> :
         null
-      } 
+      }
 
       <div className={styles.headerNavLinks}>
         <Link className={styles.link} to="/home/">
