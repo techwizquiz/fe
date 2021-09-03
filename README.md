@@ -22,4 +22,4 @@ As a user, I am able to use this app to prepare for an interview.
 
 As a user, I am able to use this app to conduct an interview
 
-As a user, I am able to use this app to show off my coding prowess to my crush
+As a user, I am able to use this app to show off my coding prowess to my crush.

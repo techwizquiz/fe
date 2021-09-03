@@ -18,11 +18,11 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
   const [round, setRound] = useState('active');
 
   const choice = () => {
-    if(selectedChoice === '') {
+    if (selectedChoice === '') {
       return;
     }
- 
-    if(selectedChoice === answer) {
+
+    if (selectedChoice === answer) {
       setWinLose('win');
       setCorrect((count) => count + 1);
     } else {
@@ -33,7 +33,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
     setRound('inactive');
     setSelectedChoice('');
   };
-  
+
 
   const handleNewQuestion = () => {
     fetchQuestions().then((questionArr) => {
@@ -48,7 +48,7 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
   return (
     <>
       <div className={styles.answersPage}>
-        
+
         <div className={styles.left}>
           <label>
             <button className={styles.button} type="radio" name="answer" value="a" onClick={({ target }) => setSelectedChoice(target.value)} key={a}>
@@ -74,17 +74,17 @@ const Answers = ({ a, b, c, d, answer, explanation }) => {
             </button>
           </label>
         </div>
-        
+
         <div className={styles.middle}>
           <div className={winLose === 'neutral' ? styles.hidden : styles.rightWrongAvatar}>
-            {winLose === 'win' ? 
+            {winLose === 'win' ?
               <>
-                <h1>Correct</h1> 
-                
-              </> : 
+                <p className={styles.correct}>Correct</p>
+
+              </> :
               <>
-                <h1>Incorrect</h1>
-                
+                <p className={styles.incorrect}>Incorrect</p>
+
               </>
             }
             <img src={winLose === 'win' ? smilingWizard : grimReaper} />

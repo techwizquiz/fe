@@ -2,15 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.css';
-
+// import { useLogin } from '../services/SessionProvider';
 
 const Home = () => {
-
-
-
   return (
-  
-
     <div className={styles.homePage}>
       <div className={styles.rightHalf}>
         <div className={styles.quizButtons}>
@@ -26,12 +21,9 @@ const Home = () => {
          
           <button>View Questions</button>
         </div>
-
       </div>
     </div>
-
   );
-
 };
 
 export default Home;

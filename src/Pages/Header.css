@@ -1,11 +1,12 @@
 .header {
     display: flex;
     flex-direction: row;
-    width: 100%;
     height: 100px;
     background-color: black;
-    justify-content: space-between;
     position: sticky;
+    font-family: 'Rampart One', cursive;
+    /* justify-content: space-between; */
+    justify-content: center;
 }
 
 .headerTitle {
@@ -13,12 +14,12 @@
     align-items: center;
     color: cyan;
     font-size: 330%;
-    font-family: 'Rampart One', cursive;
+    align-items: left;
 }
 
 .headerNavLinks {
     display: flex;
-    align-items: center;
+    align-items: flex-end; 
     color: cyan;
     font-size: 170%;
     font-family: 'Rampart One', cursive;
@@ -35,4 +36,8 @@
 img {
     height: 100px;
     width: auto;
+}
+.icon {
+    margin-left: 14%;
+    margin-right: 40.5%;
 }
