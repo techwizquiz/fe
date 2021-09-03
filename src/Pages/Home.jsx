@@ -9,17 +9,17 @@ const Home = () => {
     <div className={styles.homePage}>
       <div className={styles.rightHalf}>
         <div className={styles.quizButtons}>
-         
+
           <Link to="/quiz/">
             <button>Start Quiz</button>
           </Link>
-         
+
           <Link to="/submit">
             <button>Submit a Question</button>
           </Link>
-         
-         
-          <button>View Questions</button>
+          <Link to="/aboutus">
+            <button>About Us</button>
+          </Link>
         </div>
       </div>
     </div>

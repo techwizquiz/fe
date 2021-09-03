@@ -1,15 +1,68 @@
-.aboutUs {
-    background-color: black;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+@keyframes gradient {
+    0% {
+      background-position: 0% 40%;
+    }
+    50% {
+      background-position: 100% 40%;
+    }
+    100% {
+      background-position: 0% 40%;
+    }
+  }
 
+@keyframes button-hover {
+    0% {
+        color: cyan;
+        border-color: cyan;
+        font-weight: bolder;
+    }
+    50% {
+        color: magenta;
+        border-color: magenta;
+        font-weight: bolder;
+    }
+    100% {
+        color: cyan;
+        border-color: cyan;
+        font-weight: bolder;
+    }
+}
+
+
+.aboutUs {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: rgb(3,122,144);
+    background: linear-gradient(45deg, rgba(3,122,144,1) 20%, rgba(0,194,186,1) 41%, rgba(255,143,207,1) 60%, rgba(206,150,251,1) 80%);
+    background-size: 150% 150%;
+    background-position: center;
+    animation: gradient 12s ease infinite;
+    justify-content: center;
 }
 
 .title {
 color: cyan;
 display: flex;
 font-size: 150%;
+}
+
+.rows {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    margin: .1rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    background-color: black;
+    opacity: .8;
+    color:rgba(255,143,207,1);
+    position: sticky;
+    font-family: 'Rampart One', cursive;
+   
+    justify-content: center;
 }
